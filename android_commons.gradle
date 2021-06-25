@@ -1,0 +1,29 @@
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion Vers.compileSdk
+    defaultConfig {
+        minSdkVersion Vers.minSdk
+        targetSdkVersion Vers.targetSdk
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+        }
+    }
+}
+
+dependencies {
+    implementation Libs.kotlinStd
+
+    implementation Libs.materialX
+
+    implementation AndroidLibs.coreKtx
+    implementation AndroidLibs.appCompat
+    implementation AndroidLibs.constraintLayout
+
+    testImplementation TestLibs.junit
+
+    androidTestImplementation AndroidTestLibs.junit
+    androidTestImplementation AndroidTestLibs.espresso
+}
