@@ -19,6 +19,7 @@ object Vers {
 
     val kotlin = "1.5.10"
     val gradle = "4.2.1"
+    val moduleNav = "1.5"
 
     val appCompat = "1.3.0"
     val coreKtx = "1.5.0"
