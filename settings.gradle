@@ -1,2 +1,3 @@
 rootProject.name = "AndroidStandardLevel"
 include ':app'
+include ':common'

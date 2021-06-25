@@ -6,10 +6,15 @@ android {
         minSdkVersion Vers.minSdk
         targetSdkVersion Vers.targetSdk
     }
+
     buildTypes {
         release {
             minifyEnabled true
         }
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 }
 
