@@ -24,7 +24,12 @@ class BmiMainActivity : BaseActivity<ActivityBmiMainBinding>(ActivityBmiMainBind
                 return@setOnClickListener
             }
 
-            startActivity(Intent(this, ResultActivity::class.java))
+            startActivity(
+                Intent(this, ResultActivity::class.java).apply {
+                    putExtra("height", height.toInt())
+                    putExtra("weight", weight.toInt())
+                }
+            )
         }
     }
 }
