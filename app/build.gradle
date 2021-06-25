@@ -3,6 +3,7 @@ plugins {
 }
 
 apply from: '../android_commons.gradle'
+apply plugin: 'com.gaelmarhic.quadrant' // multi-module navigation helper(using manifest)
 
 android {
     defaultConfig {
@@ -26,6 +27,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+quadrantConfig {
+    generateByDefault false
 }
 
 dependencies {

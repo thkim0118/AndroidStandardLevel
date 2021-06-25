@@ -1,5 +1,10 @@
 apply plugin: 'com.android.library'
 apply from: '../../android_commons.gradle'
+apply plugin: 'com.gaelmarhic.quadrant' // multi-module navigation helper(using manifest)
+
+quadrantConfig {
+    generateByDefault false
+}
 
 dependencies {
     implementation project(Modules.common)

@@ -1,5 +1,6 @@
 package com.terry.bmi
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import com.terry.bmi.databinding.ActivityBmiMainBinding
@@ -22,6 +23,8 @@ class BmiMainActivity : BaseActivity<ActivityBmiMainBinding>(ActivityBmiMainBind
 
                 return@setOnClickListener
             }
+
+            startActivity(Intent(this, ResultActivity::class.java))
         }
     }
 }

@@ -1,5 +1,4 @@
 apply plugin: 'kotlin-android'
-apply plugin: 'com.gaelmarhic.quadrant' // multi-module navigation helper(using manifest)
 
 android {
     compileSdkVersion Vers.compileSdk
@@ -17,10 +16,6 @@ android {
     buildFeatures {
         viewBinding true
     }
-}
-
-quadrantConfig {
-    generateByDefault false
 }
 
 dependencies {
