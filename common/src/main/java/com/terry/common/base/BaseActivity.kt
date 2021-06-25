@@ -1,4 +1,4 @@
-package com.terry.common
+package com.terry.common.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -8,6 +8,8 @@ object Modules {
     val app = ":app"
 
     val common = ":common"
+
+    val bmi = ":features:bmi"
 }
 
 object Vers {
