@@ -1,5 +1,4 @@
 rootProject.name = "AndroidStandardLevel"
 include ':app'
 include ':common'
-include ':features:bmi'
-include ':features:lotto'
+include ':features:bmi', ':features:lotto'

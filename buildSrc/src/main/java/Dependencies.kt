@@ -10,6 +10,7 @@ object Modules {
     val common = ":common"
 
     val bmi = ":features:bmi"
+    val lotto = ":features:lotto"
 }
 
 object Vers {

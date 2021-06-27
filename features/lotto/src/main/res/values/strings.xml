@@ -1,0 +1,5 @@
+<resources>
+    <string name="add_number">번호 추가하기</string>
+    <string name="init_clear">초기화</string>
+    <string name="auto_start">자동 생성 시작</string>
+</resources>
