@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/bmi" />
+            <option value="$PROJECT_DIR$/features/diary" />
             <option value="$PROJECT_DIR$/features/lotto" />
           </set>
         </option>

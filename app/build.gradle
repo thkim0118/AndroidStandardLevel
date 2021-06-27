@@ -31,4 +31,5 @@ android {
 dependencies {
     implementation project(Modules.bmi)
     implementation project(Modules.lotto)
+    implementation project(Modules.diary)
 }
