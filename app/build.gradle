@@ -33,4 +33,5 @@ dependencies {
     implementation project(Modules.lotto)
     implementation project(Modules.diary)
     implementation project(Modules.calculator)
+    implementation project(Modules.frame)
 }

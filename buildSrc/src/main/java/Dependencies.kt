@@ -13,6 +13,7 @@ object Modules {
     val lotto = ":features:lotto"
     val diary = ":features:diary"
     val calculator = ":features:calculator"
+    val frame = ":features:frame"
 }
 
 object Vers {

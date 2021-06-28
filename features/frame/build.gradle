@@ -1,0 +1,6 @@
+apply from: '../../android_features.gradle'
+apply plugin: 'kotlin-android'
+
+dependencies {
+
+}
