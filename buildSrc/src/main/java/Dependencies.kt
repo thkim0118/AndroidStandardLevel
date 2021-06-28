@@ -27,6 +27,7 @@ object Vers {
     val appCompat = "1.3.0"
     val coreKtx = "1.5.0"
     val constraintLayout = "2.0.4"
+    val room = "2.3.0"
 
     val materialX = "1.3.0"
 
@@ -47,6 +48,8 @@ object AndroidLibs {
     val appCompat = "androidx.appcompat:appcompat:${Vers.appCompat}"
     val constraintLayout = "androidx.constraintlayout:constraintlayout:${Vers.constraintLayout}"
 
+    val roomRuntime = "androidx.room:room-runtime:${Vers.room}"
+    val roomCompiler = "androidx.room:room-compiler:${Vers.room}"
 }
 
 object TestLibs {

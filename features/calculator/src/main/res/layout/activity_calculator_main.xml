@@ -16,6 +16,37 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_weight="1" />
 
+    <TextView
+        android:id="@+id/tvExpression"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="end"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="12 * 34" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="end"
+        android:textColor="#aaaaaa"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/layoutKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_goneMarginEnd="15dp"
+        tools:text="3456" />
+
     <TableLayout
         android:id="@+id/layoutKeypad"
         android:layout_width="0dp"
@@ -60,6 +91,7 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btModulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -72,6 +104,7 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btDivider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -88,29 +121,7 @@
         <TableRow android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="7dp"
-                android:background="@drawable/bg_button"
-                android:onClick="buttonClicked"
-                android:stateListAnimator="@null"
-                android:text="@string/cal_num_9"
-                android:textColor="@color/textColor"
-                android:textSize="24sp"
-                tools:theme="@style/Widget.AppCompat.Button" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="7dp"
-                android:background="@drawable/bg_button"
-                android:stateListAnimator="@null"
-                android:text="@string/cal_num_8"
-                android:textColor="@color/textColor"
-                android:textSize="24sp"
-                tools:theme="@style/Widget.AppCompat.Button" />
-
-            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -123,6 +134,33 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:background="@drawable/bg_button"
+                android:onClick="buttonClicked"
+                android:stateListAnimator="@null"
+                android:text="@string/cal_num_8"
+                android:textColor="@color/textColor"
+                android:textSize="24sp"
+                tools:theme="@style/Widget.AppCompat.Button" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:background="@drawable/bg_button"
+                android:onClick="buttonClicked"
+                android:stateListAnimator="@null"
+                android:text="@string/cal_num_8"
+                android:textColor="@color/textColor"
+                android:textSize="24sp"
+                tools:theme="@style/Widget.AppCompat.Button" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btMulti"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -139,6 +177,7 @@
         <TableRow android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -151,10 +190,12 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
                 android:background="@drawable/bg_button"
+                android:onClick="buttonClicked"
                 android:stateListAnimator="@null"
                 android:text="@string/cal_num_5"
                 android:textColor="@color/textColor"
@@ -162,6 +203,7 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -174,6 +216,7 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btMinus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -190,6 +233,7 @@
         <TableRow android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -202,10 +246,12 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
                 android:background="@drawable/bg_button"
+                android:onClick="buttonClicked"
                 android:stateListAnimator="@null"
                 android:text="@string/cal_num_2"
                 android:textColor="@color/textColor"
@@ -213,6 +259,7 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -225,6 +272,7 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btPlus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -247,16 +295,19 @@
                 android:layout_margin="7dp"
                 android:background="@drawable/bg_button"
                 android:onClick="historyButtonClicked"
+                android:padding="12dp"
                 android:src="@drawable/ic_baseline_access_time_24"
                 android:stateListAnimator="@null"
                 android:textColor="@color/textColor"
                 android:textSize="24sp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNumber0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
                 android:background="@drawable/bg_button"
+                android:onClick="buttonClicked"
                 android:stateListAnimator="@null"
                 android:text="@string/cal_num_0"
                 android:textColor="@color/textColor"
@@ -278,19 +329,81 @@
                 tools:theme="@style/Widget.AppCompat.Button" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                android:background="@drawable/bg_button"
+                android:background="@drawable/bg_button_green"
                 android:onClick="resultButtonClicked"
                 android:stateListAnimator="@null"
                 android:text="@string/result"
-                android:textColor="@color/buttonGreen"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 tools:theme="@style/Widget.AppCompat.Button" />
 
         </TableRow>
 
     </TableLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHistory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/layoutKeypad"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btClose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:onClick="closeHistoryButtonClicked"
+            android:stateListAnimator="@null"
+            android:text="@string/close"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/btHistoryClear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btClose">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btHistoryClear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:layout_marginEnd="47dp"
+            android:layout_marginBottom="38dp"
+            android:background="@drawable/bg_button_green"
+            android:onClick="historyClearButtonClicked"
+            android:stateListAnimator="@null"
+            android:text="@string/delete_calculator_history"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

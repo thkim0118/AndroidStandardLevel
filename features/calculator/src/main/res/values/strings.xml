@@ -20,4 +20,6 @@
     <string name="cal_num_1">1</string>
     <string name="cal_num_0">0</string>
 
+    <string name="close">닫기</string>
+    <string name="delete_calculator_history">계산기록 삭제</string>
 </resources>

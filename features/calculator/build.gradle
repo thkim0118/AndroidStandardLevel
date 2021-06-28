@@ -2,4 +2,6 @@ apply from: '../../android_features.gradle'
 apply plugin: 'kotlin-android'
 
 dependencies {
+    implementation AndroidLibs.roomRuntime
+    kapt AndroidLibs.roomCompiler
 }
