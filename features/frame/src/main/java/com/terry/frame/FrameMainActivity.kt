@@ -70,6 +70,11 @@ class FrameMainActivity :
 
     private fun initStartPhotoButton() {
         startPhotoButton.setOnClickListener {
+            if (imageUriList.isEmpty()) {
+                Snackbar.make(binding.root, "등록된 사진이 없습니다.", Snackbar.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val intent = Intent(this, PhotoFrameActivity::class.java)
             imageUriList.forEachIndexed { index, uri ->
                 intent.putExtra("photo$index", uri.toString())

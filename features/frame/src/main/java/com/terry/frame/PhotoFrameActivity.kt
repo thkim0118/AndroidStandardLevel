@@ -4,6 +4,7 @@ import android.net.Uri
 import android.os.Bundle
 import com.terry.common.base.BaseActivity
 import com.terry.frame.databinding.ActivityPhotoFrameBinding
+import java.util.*
 import kotlin.concurrent.timer
 
 class PhotoFrameActivity :
@@ -13,6 +14,8 @@ class PhotoFrameActivity :
 
     private var currentPosition = 0
 
+    private var timer: Timer? = null
+
     private val photoImageView by lazy { binding.photoImageView }
 
     private val backgroundPhotoImageView by lazy { binding.backgroundPhotoImageView }
@@ -21,8 +24,6 @@ class PhotoFrameActivity :
         super.onCreate(savedInstanceState)
 
         getPhotoUriFromIntent()
-
-        startTimer()
     }
 
     private fun getPhotoUriFromIntent() {
@@ -35,7 +36,7 @@ class PhotoFrameActivity :
     }
 
     private fun startTimer() {
-        timer(period = 5 * 1000) {
+        timer = timer(period = 5 * 1000) {
             runOnUiThread {
                 val current = currentPosition
                 val next = if (photoList.size <= currentPosition + 1) 0 else current + 1
@@ -52,5 +53,23 @@ class PhotoFrameActivity :
                 currentPosition = next
             }
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        timer?.cancel()
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        startTimer()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        timer?.cancel()
     }
 }
