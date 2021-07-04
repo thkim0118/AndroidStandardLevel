@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.terry.frame">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <dist:module
+        dist:instant="false"
+        dist:title="frame">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+
+        <dist:fusing dist:include="true" />
+    </dist:module>
 
     <application>
         <activity
             android:name=".PhotoFrameActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.AndroidStandardLevel.NoActionBar">
+            android:theme="@style/Theme.Frame.NoActionBar">
 
         </activity>
         <activity android:name=".FrameMainActivity">
