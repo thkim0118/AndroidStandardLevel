@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidStandardLevel</string>
+    <string name="title_pomodoro">pomodoro</string>
 </resources>

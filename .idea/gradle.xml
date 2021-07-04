@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/features/diary" />
             <option value="$PROJECT_DIR$/features/frame" />
             <option value="$PROJECT_DIR$/features/lotto" />
+            <option value="$PROJECT_DIR$/features/pomodoro" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

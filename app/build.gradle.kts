@@ -41,7 +41,8 @@ android {
         Modules.DynamicFeature.CALCULATOR,
         Modules.DynamicFeature.DIARY,
         Modules.DynamicFeature.FRAME,
-        Modules.DynamicFeature.LOTTO
+        Modules.DynamicFeature.LOTTO,
+        Modules.DynamicFeature.POMODORO
     )
 }
 

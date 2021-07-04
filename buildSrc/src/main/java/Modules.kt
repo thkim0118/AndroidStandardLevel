@@ -12,5 +12,6 @@ object Modules {
         const val DIARY = ":features:diary"
         const val CALCULATOR = ":features:calculator"
         const val FRAME = ":features:frame"
+        const val POMODORO = ":features:pomodoro"
     }
 }
