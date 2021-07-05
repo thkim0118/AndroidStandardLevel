@@ -4,7 +4,11 @@
 object Modules {
     const val APP = ":app"
 
-    const val COMMON = ":common"
+    const val CORE = ":core"
+
+    const val LOCAL = ":local"
+
+    const val REPOSITORY = ":repository"
 
     object DynamicFeature {
         const val BMI = ":features:bmi"

@@ -8,14 +8,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import androidx.room.Room
 import com.google.android.material.snackbar.Snackbar
 import com.terry.common.LogT
 import com.terry.common.base.BaseActivity
+import com.terry.common.di.CoreModuleDependencies
 import com.thkim.calculator.databinding.ActivityCalculatorMainBinding
-import com.thkim.calculator.model.History
+import com.thkim.calculator.di.DaggerCalculatorComponent
+import com.thkim.calculator.extension.isNumber
+import com.thkim.calculator.viewmodel.CalculatorViewModel
+import dagger.hilt.android.EntryPointAccessors
+import javax.inject.Inject
 
 class CalculatorMainActivity :
     BaseActivity<ActivityCalculatorMainBinding>(ActivityCalculatorMainBinding::inflate) {
@@ -27,16 +32,24 @@ class CalculatorMainActivity :
 
     private val historyLinearLayout: LinearLayout by lazy { binding.linearLayoutHistory }
 
-    lateinit var db: AppDataBase
+    @Inject
+    lateinit var viewModel: CalculatorViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        initCoreDependentInjection()
         super.onCreate(savedInstanceState)
+    }
 
-        db = Room.databaseBuilder(
+    private fun initCoreDependentInjection() {
+        val coreModuleDependencies = EntryPointAccessors.fromApplication(
             applicationContext,
-            AppDataBase::class.java,
-            "historyDB"
-        ).build()
+            CoreModuleDependencies::class.java
+        )
+
+        DaggerCalculatorComponent.factory().create(
+            dependentModule = coreModuleDependencies,
+            activity = this
+        ).inject(this)
     }
 
     fun buttonClicked(v: View) {
@@ -128,9 +141,9 @@ class CalculatorMainActivity :
         val expressionText = binding.tvExpression.text.toString()
         val resultText = calculateExpression()
 
-        Thread {
-            db.historyDao().insertHistory(History(null, expressionText, resultText))
-        }.start()
+//        Thread {
+//            db.historyDao().insertHistory(History(null, expressionText, resultText))
+//        }.start()
 
         binding.tvResult.text = ""
         binding.tvExpression.text = resultText
@@ -174,7 +187,7 @@ class CalculatorMainActivity :
         historyLinearLayout.removeAllViews()
 
         Thread {
-            db.historyDao().getAll().reversed().forEach {
+            viewModel.getHistoryAll().reversed().forEach {
                 runOnUiThread {
                     val historyView =
                         LayoutInflater.from(this).inflate(R.layout.history_row, null, false)
@@ -196,18 +209,8 @@ class CalculatorMainActivity :
     fun historyClearButtonClicked(v: View) {
         historyLinearLayout.removeAllViews()
 
-        Thread {
-            db.historyDao().deleteAll()
-        }.start()
-    }
-}
-
-fun String.isNumber(): Boolean {
-    return try {
-        this.toBigInteger()
-        true
-    } catch (e: NumberFormatException) {
-        e.printStackTrace()
-        false
+//        Thread {
+//            db.historyDao().deleteAll()
+//        }.start()
     }
 }

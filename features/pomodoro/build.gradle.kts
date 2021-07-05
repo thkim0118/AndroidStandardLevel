@@ -16,12 +16,20 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     buildFeatures.viewBinding = true
 }
 
 dependencies {
     implementation(project(Modules.APP))
-    implementation(project(Modules.COMMON))
+    implementation(project(Modules.CORE))
 
     implementation(Deps.KOTLIN)
 
@@ -30,8 +38,4 @@ dependencies {
     implementation(Deps.ANDROIDX_CORE_KTX)
     implementation(Deps.APPCOMPAT)
     implementation(Deps.CONSTRAINT_LAYOUT)
-    implementation("androidx.appcompat:appcompat:1.3.0")
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 }

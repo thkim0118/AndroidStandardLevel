@@ -1,8 +1,10 @@
 rootProject.name = "AndroidStandardLevel"
 include ':app'
-include ':common'
+include ':core'
+include ':local'
 include ':features:bmi', ':features:lotto'
 include ':features:diary'
 include ':features:calculator'
 include ':features:frame'
 include ':features:pomodoro'
+include ':repository'

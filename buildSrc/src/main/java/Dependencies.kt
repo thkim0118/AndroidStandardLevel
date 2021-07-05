@@ -9,6 +9,8 @@ object Deps {
     // Material
     const val MATERIAL = "com.google.android.material:material:${Version.MATERIAL_VERSION}"
 
+    const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.LIFECYCLE}"
+
     // ConstraintLayout
     const val CONSTRAINT_LAYOUT =
         "androidx.constraintlayout:constraintlayout:${Version.CONSTRAINT_LAYOUT_VERSION}"
@@ -26,6 +28,8 @@ object Deps {
 
     const val ROOM_RUNTIME = "androidx.room:room-runtime:${Version.ROOM_VERSION}"
     const val ROOM_COMPILER = "androidx.room:room-compiler:${Version.ROOM_VERSION}"
+
+    const val FRAGMENT = "androidx.fragment:fragment-ktx:${Version.FRAGMENT_VERSION}"
 }
 
 object TestLibs {

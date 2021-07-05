@@ -2,6 +2,7 @@ plugins {
     id(Plugins.ANDROID_APPLICATION_PLUGIN)
     id(Plugins.KOTLIN_ANDROID_PLUGIN)
     id(Plugins.KOTLIN_KAPT_PLUGIN)
+    id(Plugins.DAGGER_HILT_PLUGIN)
 }
 
 android {
@@ -15,6 +16,17 @@ android {
         versionName = AndroidVersion.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments["room.schemaLocation"] = "$projectDir/schemas"
+            }
+        }
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
@@ -47,7 +59,9 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.COMMON))
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
+    api(project(Modules.CORE))
     implementation(Deps.KOTLIN)
 
     implementation(Deps.MATERIAL)
@@ -55,4 +69,11 @@ dependencies {
     implementation(Deps.ANDROIDX_CORE_KTX)
     implementation(Deps.APPCOMPAT)
     implementation(Deps.CONSTRAINT_LAYOUT)
+
+    // Dagger Hilt
+    implementation(Deps.DAGGER_HILT_ANDROID)
+    kapt(Deps.DAGGER_HILT_COMPILER)
+    // Dagger Hilt AndroidX & ViewModel
+    implementation(Deps.DAGGER_HILT_VIEWMODEL)
+    kapt(Deps.DAGGER_HILT_ANDROIDX_HILT_COMPILER)
 }
