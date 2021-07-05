@@ -40,6 +40,9 @@ object Version {
     const val ROOM_VERSION = "2.2.6"
 
     const val FRAGMENT_VERSION = "1.3.5"
+
+    // Coroutines
+    const val COROUTINES_VERSION = "1.3.5"
 }
 
 object TestVersion {

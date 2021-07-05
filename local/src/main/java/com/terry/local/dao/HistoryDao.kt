@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.terry.local.model.History
+import kotlinx.coroutines.flow.Flow
 
 /*
  * Created by Taehyung Kim on 2021-07-04
@@ -13,13 +14,13 @@ import com.terry.local.model.History
 interface HistoryDao {
 
     @Query("SELECT * FROM History")
-    fun getAll(): List<History>
+    fun getAll(): Flow<List<History>>
 
     @Insert
-    fun insertHistory(history: History)
+    suspend fun insertHistory(history: History): Long
 
     @Query("DELETE FROM History")
-    fun deleteAll()
+    suspend fun deleteAll(): Int
 
     @Delete
     fun delete(history: History)

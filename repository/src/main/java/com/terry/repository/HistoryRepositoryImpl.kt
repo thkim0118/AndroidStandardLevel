@@ -2,6 +2,7 @@ package com.terry.repository
 
 import com.terry.local.model.History
 import com.terry.repository.source.HistoryDataSource
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 /*
@@ -11,7 +12,15 @@ class HistoryRepositoryImpl @Inject constructor(
     private val historyDataSource: HistoryDataSource
 ) : HistoryRepository {
 
-    override fun getHistoryAll(): List<History> {
+    override fun getHistoryAll(): Flow<List<History>> {
         return historyDataSource.getHistoryAll()
+    }
+
+    override suspend fun insertHistory(history: History): Long {
+        return historyDataSource.insertHistory(history)
+    }
+
+    override suspend fun deleteAll(): Int {
+        return historyDataSource.deleteAll()
     }
 }

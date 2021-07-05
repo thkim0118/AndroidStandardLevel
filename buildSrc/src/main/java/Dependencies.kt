@@ -28,8 +28,17 @@ object Deps {
 
     const val ROOM_RUNTIME = "androidx.room:room-runtime:${Version.ROOM_VERSION}"
     const val ROOM_COMPILER = "androidx.room:room-compiler:${Version.ROOM_VERSION}"
+    const val ROOM_KTX = "androidx.room:room-ktx:${Version.ROOM_VERSION}"
 
     const val FRAGMENT = "androidx.fragment:fragment-ktx:${Version.FRAGMENT_VERSION}"
+
+    // Coroutines
+    const val COROUTINES_CORE =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINES_VERSION}"
+    const val COROUTINES_ANDROID =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.COROUTINES_VERSION}"
+
+    const val COROUTINE_LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.LIFECYCLE}"
 }
 
 object TestLibs {

@@ -55,4 +55,6 @@ dependencies {
     kapt(Deps.DAGGER_HILT_ANDROIDX_HILT_COMPILER)
 
     implementation(Deps.FRAGMENT)
+
+    implementation(Deps.COROUTINE_LIVEDATA)
 }

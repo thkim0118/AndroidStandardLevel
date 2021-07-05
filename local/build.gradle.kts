@@ -55,6 +55,7 @@ dependencies {
 
     implementation(Deps.ROOM_RUNTIME)
     implementation(Deps.ROOM_COMPILER)
+    implementation(Deps.ROOM_KTX)
 
     // Dagger Hilt
     implementation(Deps.DAGGER_HILT_ANDROID)
@@ -62,4 +63,7 @@ dependencies {
     // Dagger Hilt AndroidX & ViewModel
     implementation(Deps.DAGGER_HILT_VIEWMODEL)
     kapt(Deps.DAGGER_HILT_ANDROIDX_HILT_COMPILER)
+
+    implementation(Deps.COROUTINES_CORE)
+    implementation(Deps.COROUTINES_ANDROID)
 }

@@ -2,7 +2,9 @@ package com.thkim.calculator.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.terry.repository.usecase.GetHistoryUseCase
+import com.terry.repository.usecase.DeleteAllHistoryUseCase
+import com.terry.repository.usecase.GetAllHistoryUseCase
+import com.terry.repository.usecase.InsertHistoryUseCase
 import javax.inject.Inject
 
 /*
@@ -11,7 +13,9 @@ import javax.inject.Inject
 class ViewModelFactory
 
 class CalculatorViewModelFactory @Inject constructor(
-    private val getHistoryUseCase: GetHistoryUseCase
+    private val getAllHistoryUseCase: GetAllHistoryUseCase,
+    private val insertHistoryUseCase: InsertHistoryUseCase,
+    private val deleteAllHistoryUseCaseUseCase: DeleteAllHistoryUseCase
 ) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
@@ -21,7 +25,9 @@ class CalculatorViewModelFactory @Inject constructor(
         }
 
         return CalculatorViewModel(
-            getHistoryUseCase
+            getAllHistoryUseCase,
+            insertHistoryUseCase,
+            deleteAllHistoryUseCaseUseCase
         ) as T
     }
 

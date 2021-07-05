@@ -1,6 +1,5 @@
 package com.terry.local.di
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.terry.local.HistoryDatabase

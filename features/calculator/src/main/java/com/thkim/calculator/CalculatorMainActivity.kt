@@ -8,13 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.google.android.material.snackbar.Snackbar
 import com.terry.common.LogT
 import com.terry.common.base.BaseActivity
 import com.terry.common.di.CoreModuleDependencies
+import com.terry.local.model.History
 import com.thkim.calculator.databinding.ActivityCalculatorMainBinding
 import com.thkim.calculator.di.DaggerCalculatorComponent
 import com.thkim.calculator.extension.isNumber
@@ -141,9 +141,10 @@ class CalculatorMainActivity :
         val expressionText = binding.tvExpression.text.toString()
         val resultText = calculateExpression()
 
-//        Thread {
-//            db.historyDao().insertHistory(History(null, expressionText, resultText))
-//        }.start()
+        Thread {
+            LogT.start()
+            insertHistoryData(History(null, expressionText, resultText))
+        }.start()
 
         binding.tvResult.text = ""
         binding.tvExpression.text = resultText
@@ -151,6 +152,8 @@ class CalculatorMainActivity :
         isOperator = false
         hasOperator = false
     }
+
+    private fun insertHistoryData(history: History) = viewModel.insertHistory(history)
 
     private fun calculateExpression(): String {
         val expressionTexts = binding.tvExpression.text.split(" ")
@@ -183,23 +186,28 @@ class CalculatorMainActivity :
     }
 
     fun historyButtonClicked(v: View) {
+        LogT.start()
+
         historyLayout.isVisible = true
         historyLinearLayout.removeAllViews()
 
-        Thread {
-            viewModel.getHistoryAll().reversed().forEach {
-                runOnUiThread {
-                    val historyView =
-                        LayoutInflater.from(this).inflate(R.layout.history_row, null, false)
-                    historyView.findViewById<TextView>(R.id.tvExpression).text = it.expression
-                    historyView.findViewById<TextView>(R.id.tvResult).text = "= ${it.result}"
+        getAllHistoryData()
+    }
 
-                    LogT.d("${it.expression}, ${it.result}")
+    private fun getAllHistoryData() {
+        LogT.start()
+        viewModel.getAllHistory.observe(this) { historyList ->
+            historyList.reversed().forEach {
+                val historyView =
+                    LayoutInflater.from(this).inflate(R.layout.history_row, null, false)
+                historyView.findViewById<TextView>(R.id.tvExpression).text = it.expression
+                historyView.findViewById<TextView>(R.id.tvResult).text = "= ${it.result}"
 
-                    historyLinearLayout.addView(historyView)
-                }
+                LogT.d("${it.expression}, ${it.result}")
+
+                historyLinearLayout.addView(historyView)
             }
-        }.start()
+        }
     }
 
     fun closeHistoryButtonClicked(v: View) {
@@ -209,8 +217,10 @@ class CalculatorMainActivity :
     fun historyClearButtonClicked(v: View) {
         historyLinearLayout.removeAllViews()
 
-//        Thread {
-//            db.historyDao().deleteAll()
-//        }.start()
+        Thread {
+            deleteAllHistoryData()
+        }.start()
     }
+
+    private fun deleteAllHistoryData() = viewModel.deleteAllHistory()
 }
