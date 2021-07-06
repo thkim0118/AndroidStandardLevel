@@ -11,7 +11,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        startActivity("com.thkim.calculator.CalculatorMainActivity")
-//        startActivity("com.terry.pomodoro.PomodoroMainActivity")
+//        startActivity("com.thkim.calculator.CalculatorMainActivity")
+        startActivity("com.terry.pomodoro.PomodoroMainActivity")
     }
 }

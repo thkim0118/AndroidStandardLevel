@@ -13,8 +13,10 @@
         <dist:fusing dist:include="true" />
     </dist:module>
 
-    <application>
-        <activity android:name=".PomodoroMainActivity">
+    <application android:theme="@style/Theme.AndroidStandardLevel">
+        <activity
+            android:name=".PomodoroMainActivity"
+            android:theme="@style/Theme.AndroidStandardLevel.Pomodoro">
 
         </activity>
     </application>
