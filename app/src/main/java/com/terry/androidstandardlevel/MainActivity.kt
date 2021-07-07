@@ -12,6 +12,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         super.onCreate(savedInstanceState)
 
 //        startActivity("com.thkim.calculator.CalculatorMainActivity")
-        startActivity("com.terry.pomodoro.PomodoroMainActivity")
+//        startActivity("com.terry.pomodoro.PomodoroMainActivity")
+        startActivity("com.terry.recorder.RecorderMainActivity")
     }
 }
