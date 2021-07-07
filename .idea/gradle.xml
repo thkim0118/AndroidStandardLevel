@@ -14,13 +14,13 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/features" />
-            <option value="$PROJECT_DIR$/features/bmi" />
-            <option value="$PROJECT_DIR$/features/calculator" />
-            <option value="$PROJECT_DIR$/features/diary" />
-            <option value="$PROJECT_DIR$/features/frame" />
-            <option value="$PROJECT_DIR$/features/lotto" />
-            <option value="$PROJECT_DIR$/features/pomodoro" />
-            <option value="$PROJECT_DIR$/features/recorder" />
+            <option value="$PROJECT_DIR$/features/AudioRecorder" />
+            <option value="$PROJECT_DIR$/features/Bmi" />
+            <option value="$PROJECT_DIR$/features/Calculator" />
+            <option value="$PROJECT_DIR$/features/Diary" />
+            <option value="$PROJECT_DIR$/features/Frame" />
+            <option value="$PROJECT_DIR$/features/Lotto" />
+            <option value="$PROJECT_DIR$/features/Pomodoro" />
             <option value="$PROJECT_DIR$/local" />
             <option value="$PROJECT_DIR$/repository" />
           </set>

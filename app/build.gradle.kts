@@ -54,7 +54,7 @@ android {
         Modules.DynamicFeature.DIARY,
         Modules.DynamicFeature.FRAME,
         Modules.DynamicFeature.LOTTO,
-        Modules.DynamicFeature.POMODORO, ":features:recorder"
+        Modules.DynamicFeature.POMODORO, ":features:AudioRecorder"
     )
 }
 
