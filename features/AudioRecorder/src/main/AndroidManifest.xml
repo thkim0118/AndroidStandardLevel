@@ -3,6 +3,8 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.terry.recorder">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <dist:module
         dist:instant="false"
         dist:title="@string/title_recorder">
@@ -14,7 +16,9 @@
     </dist:module>
 
     <application>
-        <activity android:name=".RecorderMainActivity"></activity>
+        <activity android:name=".RecorderMainActivity">
+            
+        </activity>
     </application>
 
 </manifest>

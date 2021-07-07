@@ -11,11 +11,12 @@ object Modules {
     const val REPOSITORY = ":repository"
 
     object DynamicFeature {
-        const val BMI = ":features:bmi"
-        const val LOTTO = ":features:lotto"
-        const val DIARY = ":features:diary"
-        const val CALCULATOR = ":features:calculator"
-        const val FRAME = ":features:frame"
-        const val POMODORO = ":features:pomodoro"
+        const val BMI = ":features:Bmi"
+        const val LOTTO = ":features:Lotto"
+        const val DIARY = ":features:Diary"
+        const val CALCULATOR = ":features:Calculator"
+        const val FRAME = ":features:Frame"
+        const val POMODORO = ":features:Pomodoro"
+        const val AUDIO_RECORDER = ":features:AudioRecorder"
     }
 }
