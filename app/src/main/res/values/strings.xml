@@ -2,4 +2,5 @@
     <string name="app_name">AndroidStandardLevel</string>
     <string name="title_pomodoro">pomodoro</string>
     <string name="title_recorder">Recorder</string>
+    <string name="title_webviewer">WebViewer</string>
 </resources>

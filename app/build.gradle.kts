@@ -17,16 +17,16 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments["room.schemaLocation"] = "$projectDir/schemas"
-            }
-        }
-        kapt {
-            arguments {
-                arg("room.schemaLocation", "$projectDir/schemas")
-            }
-        }
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments["room.schemaLocation"] = "$projectDir/schemas"
+//            }
+//        }
+//        kapt {
+//            arguments {
+//                arg("room.schemaLocation", "$projectDir/schemas")
+//            }
+//        }
     }
 
     buildTypes {
@@ -55,7 +55,8 @@ android {
         Modules.DynamicFeature.FRAME,
         Modules.DynamicFeature.LOTTO,
         Modules.DynamicFeature.POMODORO,
-        Modules.DynamicFeature.AUDIO_RECORDER
+        Modules.DynamicFeature.AUDIO_RECORDER,
+        Modules.DynamicFeature.WEB_VIEWER
     )
 }
 
