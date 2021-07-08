@@ -18,4 +18,8 @@
         <item name="android:windowBackground">@color/pomodoro_red</item>
         <item name="android:statusBarColor">@color/pomodoro_red</item>
     </style>
+
+    <style name="Theme.AndroidStandardLevel.AudioRecorder" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/dark_gray</item>
+    </style>
 </resources>

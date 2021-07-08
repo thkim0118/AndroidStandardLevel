@@ -16,8 +16,10 @@
     </dist:module>
 
     <application>
-        <activity android:name=".RecorderMainActivity">
-            
+        <activity
+            android:name=".RecorderMainActivity"
+            android:theme="@style/Theme.AndroidStandardLevel.AudioRecorder">
+
         </activity>
     </application>
 
