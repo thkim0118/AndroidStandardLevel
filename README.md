@@ -6,3 +6,14 @@
 - MediaPlayer
 - MediaRecorder
 - Audio Record Permission
+
+### WebViewer
+- WebView
+  - WebViewClient
+  - WebChromeClient
+- EditText
+  - imeOptions
+  - inputType
+  - selectAllOnFocus
+- SwipeRefreshLayout
+- ContentLoadingProgressBar
