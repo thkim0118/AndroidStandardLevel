@@ -3,4 +3,5 @@
     <string name="title_pomodoro">pomodoro</string>
     <string name="title_recorder">Recorder</string>
     <string name="title_webviewer">WebViewer</string>
+    <string name="title_notification">Notification</string>
 </resources>

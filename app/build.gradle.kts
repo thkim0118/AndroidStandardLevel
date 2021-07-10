@@ -56,7 +56,8 @@ android {
         Modules.DynamicFeature.LOTTO,
         Modules.DynamicFeature.POMODORO,
         Modules.DynamicFeature.AUDIO_RECORDER,
-        Modules.DynamicFeature.WEB_VIEWER
+        Modules.DynamicFeature.WEB_VIEWER,
+        Modules.DynamicFeature.NOTIFICATION
     )
 }
 
