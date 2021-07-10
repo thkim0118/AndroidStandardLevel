@@ -43,6 +43,8 @@ object Version {
 
     // Coroutines
     const val COROUTINES_VERSION = "1.3.5"
+
+    const val SWIPE_REFRESH_LAYOUT_VERSION = "1.1.0"
 }
 
 object TestVersion {

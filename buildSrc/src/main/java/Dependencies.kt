@@ -9,7 +9,8 @@ object Deps {
     // Material
     const val MATERIAL = "com.google.android.material:material:${Version.MATERIAL_VERSION}"
 
-    const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.LIFECYCLE}"
+    const val LIFECYCLE_VIEWMODEL =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.LIFECYCLE}"
 
     // ConstraintLayout
     const val CONSTRAINT_LAYOUT =
@@ -39,6 +40,9 @@ object Deps {
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.COROUTINES_VERSION}"
 
     const val COROUTINE_LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.LIFECYCLE}"
+
+    const val SWIPE_REFRESH_LAYOUT =
+        "androidx.swiperefreshlayout:swiperefreshlayout:${Version.SWIPE_REFRESH_LAYOUT_VERSION}"
 }
 
 object TestLibs {

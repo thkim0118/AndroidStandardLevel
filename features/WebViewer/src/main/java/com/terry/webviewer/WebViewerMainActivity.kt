@@ -1,9 +1,11 @@
 package com.terry.webviewer
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
-import android.webkit.WebViewClient
+import android.webkit.URLUtil
+import android.webkit.WebView
 import com.terry.common.base.BaseActivity
 import com.terry.webviewer.databinding.ActivityWebViewerMainBinding
 
@@ -30,6 +32,13 @@ class WebViewerMainActivity :
         binding.addressBar
     }
 
+    private val refreshLayout by lazy {
+        binding.refreshLayout
+    }
+
+    private val progressBar by lazy {
+        binding.progressBar
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,15 +63,21 @@ class WebViewerMainActivity :
         // override 하여 앱 내에서 실행하도록 변경
         webView.apply {
             webViewClient = WebViewClient()
+            webChromeClient = WebChromeClient()
             settings.javaScriptEnabled = true // 보안 이슈가 발생할 수 있다.
             loadUrl(DEFAULT_URL)
         }
     }
 
     private fun bindViews() {
-        addressBar.setOnEditorActionListener { v, actionId, event ->
+        addressBar.setOnEditorActionListener { v, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-                webView.loadUrl(v.text.toString())
+                val loadingUrl = v.text.toString()
+                if (URLUtil.isNetworkUrl(loadingUrl)) {
+                    webView.loadUrl(loadingUrl)
+                } else {
+                    webView.loadUrl("http://$loadingUrl")
+                }
             }
 
             return@setOnEditorActionListener false
@@ -78,6 +93,37 @@ class WebViewerMainActivity :
 
         goHomeButton.setOnClickListener {
             webView.loadUrl(DEFAULT_URL)
+        }
+
+        refreshLayout.setOnRefreshListener {
+            webView.reload()
+        }
+    }
+
+    inner class WebViewClient : android.webkit.WebViewClient() {
+
+        override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+            super.onPageStarted(view, url, favicon)
+
+            progressBar.show()
+        }
+
+        override fun onPageFinished(view: WebView?, url: String?) {
+            super.onPageFinished(view, url)
+
+            refreshLayout.isRefreshing = false
+            progressBar.hide()
+            goBackButton.isEnabled = webView.canGoBack()
+            goForwardButton.isEnabled = webView.canGoForward()
+            addressBar.setText(url)
+        }
+    }
+
+    inner class WebChromeClient : android.webkit.WebChromeClient() {
+        override fun onProgressChanged(view: WebView?, newProgress: Int) {
+            super.onProgressChanged(view, newProgress)
+
+            progressBar.progress = newProgress
         }
     }
 

@@ -38,4 +38,6 @@ dependencies {
     implementation(Deps.ANDROIDX_CORE_KTX)
     implementation(Deps.APPCOMPAT)
     implementation(Deps.CONSTRAINT_LAYOUT)
+
+    implementation(Deps.SWIPE_REFRESH_LAYOUT)
 }

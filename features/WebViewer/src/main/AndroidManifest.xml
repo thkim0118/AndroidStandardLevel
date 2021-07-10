@@ -15,9 +15,10 @@
         <dist:fusing dist:include="true" />
     </dist:module>
 
-    <application
-        android:usesCleartextTraffic="true"> <!-- clear Text 사용 옵션(http 를 지원하는 옵션) -->
-        <activity android:name=".WebViewerMainActivity">
+    <application android:usesCleartextTraffic="true"> <!-- clear Text 사용 옵션(http 를 지원하는 옵션) -->
+        <activity
+            android:name=".WebViewerMainActivity"
+            android:theme="@style/Theme.AndroidStandardLevel.WebViewer">
 
         </activity>
     </application>
