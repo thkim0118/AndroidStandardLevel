@@ -22,4 +22,9 @@
     <style name="Theme.AndroidStandardLevel.AudioRecorder" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="android:windowBackground">@color/dark_gray</item>
     </style>
+
+    <style name="Theme.AndroidStandardLevel.WebViewer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>

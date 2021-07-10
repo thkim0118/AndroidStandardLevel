@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/features/Frame" />
             <option value="$PROJECT_DIR$/features/Lotto" />
             <option value="$PROJECT_DIR$/features/Pomodoro" />
+            <option value="$PROJECT_DIR$/features/WebViewer" />
             <option value="$PROJECT_DIR$/local" />
             <option value="$PROJECT_DIR$/repository" />
           </set>

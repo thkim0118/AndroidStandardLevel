@@ -18,5 +18,6 @@ object Modules {
         const val FRAME = ":features:Frame"
         const val POMODORO = ":features:Pomodoro"
         const val AUDIO_RECORDER = ":features:AudioRecorder"
+        const val WEB_VIEWER = ":features:WebViewer"
     }
 }

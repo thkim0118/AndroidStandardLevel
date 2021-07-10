@@ -20,7 +20,7 @@ object AndroidVersion {
 }
 
 object Version {
-    const val CORE_KTX_VERSION = "1.5.0"
+    const val CORE_KTX_VERSION = "1.6.0"
     const val FRAGMENT_KTX_VERSION = "1.1.0-rc01"
     // Appcompat
     const val APPCOMPAT_VERSION = "1.3.0"
@@ -43,6 +43,8 @@ object Version {
 
     // Coroutines
     const val COROUTINES_VERSION = "1.3.5"
+
+    const val SWIPE_REFRESH_LAYOUT_VERSION = "1.1.0"
 }
 
 object TestVersion {
