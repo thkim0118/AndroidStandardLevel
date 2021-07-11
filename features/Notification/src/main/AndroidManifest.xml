@@ -15,7 +15,7 @@
 
     <application>
         <activity android:name=".NotificationMainActivity">
-            
+
         </activity>
     </application>
 

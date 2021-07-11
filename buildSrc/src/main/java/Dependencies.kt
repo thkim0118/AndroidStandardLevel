@@ -43,6 +43,13 @@ object Deps {
 
     const val SWIPE_REFRESH_LAYOUT =
         "androidx.swiperefreshlayout:swiperefreshlayout:${Version.SWIPE_REFRESH_LAYOUT_VERSION}"
+
+    const val FIREBASE_BOM =
+        "com.google.firebase:firebase-bom:${Version.FIREBASE_VERSION}"
+    const val FIREBASE_ANALYTICS =
+        "com.google.firebase:firebase-analytics-ktx"
+    const val FIREBASE_MESSAGING =
+        "com.google.firebase:firebase-messaging-ktx"
 }
 
 object TestLibs {
