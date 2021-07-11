@@ -8,6 +8,8 @@ object PluginVersion {
     const val NAV_SAFE_ARGS_VERSION = "2.3.0"
     const val KTLINT_VERSION = "9.3.0"
     const val DETEKT_VERSION = "1.10.0"
+
+    const val GOOGLE_SERVICE_VERSION = "4.3.8"
 }
 
 object AndroidVersion {
@@ -45,6 +47,8 @@ object Version {
     const val COROUTINES_VERSION = "1.3.5"
 
     const val SWIPE_REFRESH_LAYOUT_VERSION = "1.1.0"
+
+    const val FIREBASE_VERSION = "28.2.1"
 }
 
 object TestVersion {

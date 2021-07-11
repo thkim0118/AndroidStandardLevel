@@ -15,6 +15,8 @@ object Plugins {
         "com.google.dagger:hilt-android-gradle-plugin:${Version.DAGGER_HILT_VERSION}"
     const val CLASSPATH_NAV_SAFE_ARGS =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${PluginVersion.NAV_SAFE_ARGS_VERSION}"
+    const val CLASSPATH_GOOGLE_SERVICE =
+        "com.google.gms:google-services:${PluginVersion.GOOGLE_SERVICE_VERSION}"
 
     /*
         Module Level
@@ -23,6 +25,7 @@ object Plugins {
     const val ANDROID_APPLICATION_PLUGIN = "com.android.application"
     const val ANDROID_DYNAMIC_FEATURE_PLUGIN = "com.android.dynamic-feature"
     const val ANDROID_LIBRARY_PLUGIN = "com.android.library"
+    const val GOOGLE_SERVICE = "com.google.gms.google-services"
 
     const val KOTLIN_ANDROID_PLUGIN = "kotlin-android"
     const val KOTLIN_ANDROID_EXTENSIONS_PLUGIN = "kotlin-android-extensions"

@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/google-services.json
+features/notification/google-services.json
