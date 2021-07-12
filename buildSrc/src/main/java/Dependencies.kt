@@ -50,6 +50,8 @@ object Deps {
         "com.google.firebase:firebase-analytics-ktx"
     const val FIREBASE_MESSAGING =
         "com.google.firebase:firebase-messaging-ktx"
+    const val FIREBASE_CONFIG =
+        "com.google.firebase:firebase-config-ktx"
 }
 
 object TestLibs {

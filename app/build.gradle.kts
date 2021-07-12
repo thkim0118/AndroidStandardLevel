@@ -74,4 +74,6 @@ dependencies {
     implementation(platform(Deps.FIREBASE_BOM))
     implementation(Deps.FIREBASE_ANALYTICS)
     implementation(Deps.FIREBASE_MESSAGING)
+    implementation(Deps.FIREBASE_CONFIG)
+
 }

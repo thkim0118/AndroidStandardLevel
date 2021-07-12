@@ -38,4 +38,8 @@ dependencies {
     implementation(Deps.ANDROIDX_CORE_KTX)
     implementation(Deps.APPCOMPAT)
     implementation(Deps.CONSTRAINT_LAYOUT)
+
+    implementation(platform(Deps.FIREBASE_BOM))
+    implementation(Deps.FIREBASE_ANALYTICS)
+    implementation(Deps.FIREBASE_CONFIG)
 }
