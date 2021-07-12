@@ -15,6 +15,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 //        startActivity("com.terry.pomodoro.PomodoroMainActivity")
 //        startActivity("com.terry.recorder.RecorderMainActivity")
 //        startActivity("com.terry.webviewer.WebViewerMainActivity")
-        startActivity("com.terry.notification.NotificationMainActivity")
+//        startActivity("com.terry.notification.NotificationMainActivity")
+        startActivity("com.terry.remoteconfig.SayingMainActivity")
     }
 }
