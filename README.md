@@ -26,3 +26,9 @@
   - Expandable
   - Custom
 - PendingIntent
+
+### RemoteConfig
+- Firebase RemoteConfig
+  - Debug -> Fetch 주기를 0으로 설정 가능
+  - Release -> Fetch 를 최소 12시간으로 설정해야한다.
+  - Remote Config 의 Default 값은 setDefaultsAsync() 로 설정한다.
