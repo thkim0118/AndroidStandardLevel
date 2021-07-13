@@ -20,5 +20,6 @@ object Modules {
         const val AUDIO_RECORDER = ":features:AudioRecorder"
         const val WEB_VIEWER = ":features:WebViewer"
         const val NOTIFICATION = ":features:Notification"
+        const val REMOTE_CONFIG = ":features:RemoteConfig"
     }
 }

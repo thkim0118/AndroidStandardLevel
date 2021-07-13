@@ -47,7 +47,8 @@ android {
         Modules.DynamicFeature.POMODORO,
         Modules.DynamicFeature.AUDIO_RECORDER,
         Modules.DynamicFeature.WEB_VIEWER,
-        Modules.DynamicFeature.NOTIFICATION
+        Modules.DynamicFeature.NOTIFICATION,
+        Modules.DynamicFeature.REMOTE_CONFIG
     )
 }
 
@@ -73,4 +74,6 @@ dependencies {
     implementation(platform(Deps.FIREBASE_BOM))
     implementation(Deps.FIREBASE_ANALYTICS)
     implementation(Deps.FIREBASE_MESSAGING)
+    implementation(Deps.FIREBASE_CONFIG)
+
 }
