@@ -21,5 +21,6 @@ object Modules {
         const val WEB_VIEWER = ":features:WebViewer"
         const val NOTIFICATION = ":features:Notification"
         const val REMOTE_CONFIG = ":features:RemoteConfig"
+        const val ALARM = ":features:Alarm"
     }
 }
