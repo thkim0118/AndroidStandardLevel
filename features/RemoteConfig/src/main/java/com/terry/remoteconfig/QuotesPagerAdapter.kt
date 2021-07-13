@@ -1,5 +1,6 @@
 package com.terry.remoteconfig
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,10 +22,11 @@ class QuotesPagerAdapter(
         )
 
     override fun onBindViewHolder(holder: QuoteViewHolder, position: Int) {
-        holder.bind(quotes[position], isNameRevealed)
+        val actualPosition = position % quotes.size
+        holder.bind(quotes[actualPosition], isNameRevealed)
     }
 
-    override fun getItemCount(): Int = quotes.size
+    override fun getItemCount(): Int = Int.MAX_VALUE
 
     class QuoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -32,11 +34,12 @@ class QuotesPagerAdapter(
 
         private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
 
+        @SuppressLint("SetTextI18n")
         fun bind(quote: Quote, isNameRevealed: Boolean) {
-            quoteTextView.text = quote.quote
+            quoteTextView.text = "\"${quote.quote}\""
 
             if (isNameRevealed) {
-                nameTextView.text = quote.name
+                nameTextView.text = "- ${quote.name}"
                 nameTextView.visibility = View.VISIBLE
             } else {
                 nameTextView.visibility = View.GONE

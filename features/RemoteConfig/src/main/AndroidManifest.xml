@@ -14,7 +14,11 @@
     </dist:module>
 
     <application>
-        <activity android:name=".SayingMainActivity"></activity>
+        <activity
+            android:name=".SayingMainActivity"
+            android:theme="@style/Theme.AndroidStandardLevel.RemoteConfig">
+
+        </activity>
     </application>
 
 </manifest>
