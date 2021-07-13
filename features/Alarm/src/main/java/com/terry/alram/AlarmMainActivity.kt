@@ -1,11 +1,14 @@
 package com.terry.alram
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.terry.alram.databinding.ActivityAlarmMainBinding
+import com.terry.common.base.BaseActivity
 
-class AlarmMainActivity : AppCompatActivity() {
+class AlarmMainActivity :
+    BaseActivity<ActivityAlarmMainBinding>(ActivityAlarmMainBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_alarm_main)
+
+
     }
 }

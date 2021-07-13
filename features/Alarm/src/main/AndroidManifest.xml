@@ -14,7 +14,11 @@
     </dist:module>
 
     <application>
-        <activity android:name=".AlarmMainActivity"></activity>
+        <activity
+            android:name=".AlarmMainActivity"
+            android:theme="@style/Theme.AndroidStandardLevel.Alarm">
+
+        </activity>
     </application>
 
 </manifest>
