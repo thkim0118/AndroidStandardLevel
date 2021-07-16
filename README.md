@@ -38,3 +38,8 @@
 - ViewPager2
   - infinite scroll pager
 
+### Alarm
+- BroadcastReceiver
+- AlarmManager
+- PendingIntent
+- TiemPickerDialog
