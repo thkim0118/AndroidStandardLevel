@@ -32,4 +32,9 @@
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+
+    <style name="Theme.AndroidStandardLevel.Alarm" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#222222</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
 </resources>

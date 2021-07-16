@@ -48,7 +48,8 @@ android {
         Modules.DynamicFeature.AUDIO_RECORDER,
         Modules.DynamicFeature.WEB_VIEWER,
         Modules.DynamicFeature.NOTIFICATION,
-        Modules.DynamicFeature.REMOTE_CONFIG
+        Modules.DynamicFeature.REMOTE_CONFIG,
+        Modules.DynamicFeature.ALARM
     )
 }
 
