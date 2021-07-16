@@ -49,7 +49,8 @@ android {
         Modules.DynamicFeature.WEB_VIEWER,
         Modules.DynamicFeature.NOTIFICATION,
         Modules.DynamicFeature.REMOTE_CONFIG,
-        Modules.DynamicFeature.ALARM
+        Modules.DynamicFeature.ALARM,
+        Modules.DynamicFeature.BOOKS
     )
 }
 
