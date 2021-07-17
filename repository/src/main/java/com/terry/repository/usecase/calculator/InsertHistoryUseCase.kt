@@ -1,7 +1,7 @@
-package com.terry.repository.usecase
+package com.terry.repository.usecase.calculator
 
 import com.terry.local.model.History
-import com.terry.repository.HistoryRepository
+import com.terry.repository.repo.calculator.HistoryRepository
 import com.terry.repository.base.CoroutineUseCase
 import javax.inject.Inject
 

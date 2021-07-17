@@ -52,6 +52,15 @@ object Deps {
         "com.google.firebase:firebase-messaging-ktx"
     const val FIREBASE_CONFIG =
         "com.google.firebase:firebase-config-ktx"
+
+    const val RETROFIT =
+        "com.squareup.retrofit2:retrofit:${Version.RETROFIT_VERSION}"
+
+    const val RETROFIT_GSON =
+        "com.squareup.retrofit2:converter-gson:${Version.RETROFIT_VERSION}"
+
+    const val GLIDE =
+        "com.github.bumptech.glide:glide:${Version.GLIDE_VERSION}"
 }
 
 object TestLibs {

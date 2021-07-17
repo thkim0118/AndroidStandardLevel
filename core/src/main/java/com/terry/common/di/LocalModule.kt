@@ -1,10 +1,14 @@
 package com.terry.common.di
 
 import com.terry.local.di.DatabaseModule
-import com.terry.repository.HistoryRepository
-import com.terry.repository.HistoryRepositoryImpl
-import com.terry.repository.source.HistoryDataSource
-import com.terry.repository.source.HistoryDataSourceImpl
+import com.terry.repository.repo.books.BookSearchHistoryRepositoryImpl
+import com.terry.repository.repo.books.BookSearchHistoryRepository
+import com.terry.repository.repo.calculator.HistoryRepository
+import com.terry.repository.repo.calculator.HistoryRepositoryImpl
+import com.terry.repository.source.books.BookSearchHistoryDataSource
+import com.terry.repository.source.books.BookSearchHistoryDataSourceImpl
+import com.terry.repository.source.calculator.HistoryDataSource
+import com.terry.repository.source.calculator.HistoryDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -20,9 +24,17 @@ interface LocalModule {
 
     @Singleton
     @Binds
-    fun bindLocalDataSource(historyDataSource: HistoryDataSourceImpl): HistoryDataSource
+    fun bindCalculatorHistoryDataSource(historyDataSource: HistoryDataSourceImpl): HistoryDataSource
 
     @Singleton
     @Binds
-    fun bindRepository(repository: HistoryRepositoryImpl): HistoryRepository
+    fun bindCalculatorHistoryRepository(repository: HistoryRepositoryImpl): HistoryRepository
+
+    @Singleton
+    @Binds
+    fun bindBookSearchHistoryDataSource(searchHistoryDataSource: BookSearchHistoryDataSourceImpl): BookSearchHistoryDataSource
+
+    @Singleton
+    @Binds
+    fun bindBookSearchHistoryRepository(repository: BookSearchHistoryRepositoryImpl): BookSearchHistoryRepository
 }

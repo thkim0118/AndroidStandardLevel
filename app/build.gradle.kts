@@ -78,4 +78,12 @@ dependencies {
     implementation(Deps.FIREBASE_MESSAGING)
     implementation(Deps.FIREBASE_CONFIG)
 
+    implementation(Deps.LIFECYCLE_VIEWMODEL)
+
+    implementation(Deps.ROOM_RUNTIME)
+    implementation(Deps.ROOM_COMPILER)
+
+    implementation(Deps.FRAGMENT)
+
+    implementation(Deps.COROUTINE_LIVEDATA)
 }
