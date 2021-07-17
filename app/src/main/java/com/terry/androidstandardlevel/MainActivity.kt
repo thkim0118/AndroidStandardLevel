@@ -18,6 +18,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 //        startActivity("com.terry.notification.NotificationMainActivity")
 //        startActivity("com.terry.remoteconfig.SayingMainActivity")
 //        startActivity("com.terry.alram.AlarmMainActivity")
-        startActivity("com.terry.books.BooksMainActivity")
+//        startActivity("com.terry.books.BooksMainActivity")
+        startActivity("com.terry.tinder.TinderMainActivity")
     }
 }

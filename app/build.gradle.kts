@@ -50,7 +50,7 @@ android {
         Modules.DynamicFeature.NOTIFICATION,
         Modules.DynamicFeature.REMOTE_CONFIG,
         Modules.DynamicFeature.ALARM,
-        Modules.DynamicFeature.BOOKS
+        Modules.DynamicFeature.BOOKS, ":features:Tinder"
     )
 }
 
