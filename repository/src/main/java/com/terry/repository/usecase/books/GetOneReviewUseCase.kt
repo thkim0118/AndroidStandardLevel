@@ -2,7 +2,7 @@ package com.terry.repository.usecase.books
 
 import com.terry.local.model.Review
 import com.terry.repository.base.BaseUseCase
-import com.terry.repository.repo.books.ReviewRepository
+import com.terry.repository.repo.books.local.ReviewRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

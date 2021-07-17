@@ -30,9 +30,8 @@ android {
 }
 
 dependencies {
-    api(project(Modules.APP))
-    api(project(Modules.CORE))
-    api(project(Modules.REPOSITORY))
+    implementation(project(Modules.APP))
+    implementation(project(Modules.CORE))
 
     implementation(Deps.KOTLIN)
 

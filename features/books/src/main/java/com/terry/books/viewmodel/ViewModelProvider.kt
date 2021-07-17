@@ -3,6 +3,8 @@ package com.terry.books.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.terry.repository.usecase.books.*
+import com.terry.repository.usecase.books.remote.GetBestSellerBooksUseCase
+import com.terry.repository.usecase.books.remote.GetBooksByNameUseCase
 import javax.inject.Inject
 
 /*
@@ -11,7 +13,9 @@ import javax.inject.Inject
 class BooksViewModelProvider @Inject constructor(
     private val getAllSearchHistoryUseCase: GetAllSearchHistoryUseCase,
     private val insertBookSearchHistoryUseCase: InsertBookSearchHistoryUseCase,
-    private val deleteBookSearchHistoryUseCase: DeleteBookSearchHistoryUseCase
+    private val deleteBookSearchHistoryUseCase: DeleteBookSearchHistoryUseCase,
+    private val getBooksByNameUseCase: GetBooksByNameUseCase,
+    private val getBestSellerBooksUseCase: GetBestSellerBooksUseCase
 ) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
@@ -23,7 +27,9 @@ class BooksViewModelProvider @Inject constructor(
         return BooksViewModel(
             getAllSearchHistoryUseCase,
             insertBookSearchHistoryUseCase,
-            deleteBookSearchHistoryUseCase
+            deleteBookSearchHistoryUseCase,
+            getBooksByNameUseCase,
+            getBestSellerBooksUseCase
         ) as T
     }
 

@@ -1,4 +1,4 @@
-package com.terry.books.model
+package com.terry.remote.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

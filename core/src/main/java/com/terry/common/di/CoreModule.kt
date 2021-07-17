@@ -10,7 +10,7 @@ import dagger.hilt.components.SingletonComponent
  * Created by Taehyung Kim on 2021-07-05
  */
 @InstallIn(SingletonComponent::class)
-@Module(includes = [LocalModule::class])
+@Module(includes = [RepositoryModule::class])
 class CoreModule {
 
     @Provides

@@ -3,7 +3,7 @@ package com.terry.books.di
 import android.app.Activity
 import com.terry.books.BookDetailActivity
 import com.terry.books.BooksMainActivity
-import com.terry.common.di.CoreModuleDependencies
+import com.terry.common.di.UseCaseDependencies
 import dagger.BindsInstance
 import dagger.Component
 
@@ -11,7 +11,7 @@ import dagger.Component
  * Created by Taehyung Kim on 2021-07-17
  */
 @Component(
-    dependencies = [CoreModuleDependencies::class],
+    dependencies = [UseCaseDependencies::class],
     modules = [BooksModule::class]
 )
 interface BooksComponent {
@@ -22,7 +22,7 @@ interface BooksComponent {
     @Component.Factory
     interface Factory {
         fun create(
-            dependentModule: CoreModuleDependencies,
+            dependentModule: UseCaseDependencies,
             @BindsInstance activity: Activity
         ): BooksComponent
     }

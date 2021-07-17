@@ -8,22 +8,14 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.terry.books.adapter.BookAdapter
 import com.terry.books.adapter.BookSearchHistoryAdapter
-import com.terry.books.api.BookService
 import com.terry.books.databinding.ActivityBooksMainBinding
 import com.terry.books.di.DaggerBooksComponent
-import com.terry.books.model.BestSellerDTO
-import com.terry.books.model.SearchBookDTO
 import com.terry.books.viewmodel.BooksViewModel
 import com.terry.common.LogT
 import com.terry.common.base.BaseActivity
-import com.terry.common.di.CoreModuleDependencies
+import com.terry.common.di.UseCaseDependencies
 import com.terry.local.model.BookSearchHistory
 import dagger.hilt.android.EntryPointAccessors
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 
 class BooksMainActivity :
@@ -31,8 +23,6 @@ class BooksMainActivity :
 
     private lateinit var adapter: BookAdapter
     private lateinit var bookSearchHistoryAdapter: BookSearchHistoryAdapter
-
-    private lateinit var bookService: BookService
 
     private var keywords: MutableList<BookSearchHistory> = mutableListOf()
 
@@ -47,75 +37,48 @@ class BooksMainActivity :
         initSearchHistoryRecyclerView()
         initSearchEditText()
         getSearchHistoryData()
-
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://book.interpark.com")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        bookService = retrofit.create(BookService::class.java)
-
-        bookService.getBestSellerBooks(BuildConfig.interpark_key)
-            .enqueue(object : Callback<BestSellerDTO> {
-                override fun onResponse(
-                    call: Call<BestSellerDTO>,
-                    response: Response<BestSellerDTO>
-                ) {
-                    if (response.isSuccessful.not()) {
-                        LogT.e("is not successful")
-                        return
-                    }
-
-                    LogT.d(response.body()?.books.toString())
-                    adapter.submitList(response.body()?.books.orEmpty())
-                }
-
-                override fun onFailure(call: Call<BestSellerDTO>, t: Throwable) {
-                    LogT.e(t.stackTraceToString())
-                }
-
-            })
+        getBestSellerBooks()
+        observeLiveData()
     }
 
     private fun initCoreDependentInjection() {
-        val coreDependencies = EntryPointAccessors.fromApplication(
+        val useCaseDependencies = EntryPointAccessors.fromApplication(
             applicationContext,
-            CoreModuleDependencies::class.java
+            UseCaseDependencies::class.java
         )
 
         DaggerBooksComponent.factory().create(
-            dependentModule = coreDependencies,
+            dependentModule = useCaseDependencies,
             activity = this
         ).inject(this)
     }
 
+    private fun observeLiveData() {
+        observeBestSellerResponse()
+        observeSearchBooksResponse()
+    }
+
+    private fun observeBestSellerResponse() {
+        viewModel.bestSellerResponse.observe(this) {
+            adapter.submitList(it)
+        }
+    }
+
+    private fun observeSearchBooksResponse() {
+        viewModel.searchBookResponse.observe(this) {
+            hideHistoryView()
+
+            adapter.submitList(it)
+        }
+    }
+
+    private fun getBestSellerBooks() {
+        viewModel.getBestSellerBooks(BuildConfig.interpark_key)
+    }
+
     // search history 에서 아이템을 선택하면 바로 search가 되는 기능
     private fun search(keyword: String) {
-        bookService.getBooksByName(BuildConfig.interpark_key, keyword)
-            .enqueue(object : Callback<SearchBookDTO> {
-                override fun onResponse(
-                    call: Call<SearchBookDTO>,
-                    response: Response<SearchBookDTO>
-                ) {
-                    hideHistoryView()
-
-                    viewModel.saveSearchKeyword(keyword)
-
-                    if (response.isSuccessful.not()) {
-                        LogT.e("is not successful")
-                        return
-                    }
-
-                    adapter.submitList(response.body()?.books.orEmpty())
-                }
-
-                override fun onFailure(call: Call<SearchBookDTO>, t: Throwable) {
-                    hideHistoryView()
-
-                    LogT.e(t.stackTraceToString())
-                }
-
-            })
+        viewModel.getBooksByName(BuildConfig.interpark_key, keyword)
     }
 
     private fun initBookRecyclerView() {

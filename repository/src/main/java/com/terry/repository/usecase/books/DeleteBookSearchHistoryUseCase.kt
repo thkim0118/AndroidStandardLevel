@@ -1,7 +1,7 @@
 package com.terry.repository.usecase.books
 
 import com.terry.repository.base.CoroutineUseCase
-import com.terry.repository.repo.books.BookSearchHistoryRepository
+import com.terry.repository.repo.books.local.BookSearchHistoryRepository
 import javax.inject.Inject
 
 /*

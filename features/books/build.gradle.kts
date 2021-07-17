@@ -71,4 +71,7 @@ dependencies {
     implementation(Deps.FRAGMENT)
 
     implementation(Deps.COROUTINE_LIVEDATA)
+    implementation(Deps.LIVEDATA)
+    implementation(Deps.LIVEDATA_RUNTIME)
+
 }

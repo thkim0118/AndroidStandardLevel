@@ -1,7 +1,7 @@
-package com.terry.repository.repo.books
+package com.terry.repository.repo.books.local
 
 import com.terry.local.model.BookSearchHistory
-import com.terry.repository.source.books.BookSearchHistoryDataSource
+import com.terry.repository.source.books.local.BookSearchHistoryDataSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

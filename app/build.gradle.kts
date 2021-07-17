@@ -83,7 +83,13 @@ dependencies {
     implementation(Deps.ROOM_RUNTIME)
     implementation(Deps.ROOM_COMPILER)
 
+    implementation(Deps.RETROFIT)
+    implementation(Deps.RETROFIT_GSON)
+
     implementation(Deps.FRAGMENT)
 
     implementation(Deps.COROUTINE_LIVEDATA)
+    implementation(Deps.LIVEDATA)
+    implementation(Deps.LIVEDATA_RUNTIME)
+
 }

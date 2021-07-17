@@ -2,7 +2,7 @@ package com.terry.repository.usecase.books
 
 import com.terry.local.model.BookSearchHistory
 import com.terry.repository.base.BaseUseCase
-import com.terry.repository.repo.books.BookSearchHistoryRepository
+import com.terry.repository.repo.books.local.BookSearchHistoryRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

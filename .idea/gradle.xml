@@ -27,6 +27,7 @@
             <option value="$PROJECT_DIR$/features/WebViewer" />
             <option value="$PROJECT_DIR$/features/books" />
             <option value="$PROJECT_DIR$/local" />
+            <option value="$PROJECT_DIR$/remote" />
             <option value="$PROJECT_DIR$/repository" />
           </set>
         </option>

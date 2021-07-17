@@ -7,6 +7,7 @@ object Modules {
     const val CORE = ":core"
 
     const val LOCAL = ":local"
+    const val REMOTE = ":remote"
 
     const val REPOSITORY = ":repository"
 

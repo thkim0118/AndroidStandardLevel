@@ -4,11 +4,11 @@ import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.terry.books.databinding.ActivityDetailBinding
 import com.terry.books.di.DaggerBooksComponent
-import com.terry.books.model.Book
 import com.terry.books.viewmodel.BookDetailViewModel
 import com.terry.common.base.BaseActivity
-import com.terry.common.di.CoreModuleDependencies
+import com.terry.common.di.UseCaseDependencies
 import com.terry.local.model.Review
+import com.terry.remote.model.Book
 import dagger.hilt.android.EntryPointAccessors
 import javax.inject.Inject
 
@@ -48,13 +48,13 @@ class BookDetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBin
     }
 
     private fun initCoreDependentInjection() {
-        val coreDependencies = EntryPointAccessors.fromApplication(
+        val useCaseDependencies = EntryPointAccessors.fromApplication(
             applicationContext,
-            CoreModuleDependencies::class.java
+            UseCaseDependencies::class.java
         )
 
         DaggerBooksComponent.factory().create(
-            dependentModule = coreDependencies,
+            dependentModule = useCaseDependencies,
             activity = this
         ).inject(this)
     }

@@ -1,7 +1,7 @@
-package com.terry.repository.repo.books
+package com.terry.repository.repo.books.local
 
 import com.terry.local.model.Review
-import com.terry.repository.source.books.ReviewDataSource
+import com.terry.repository.source.books.local.ReviewDataSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.terry.repository.repo.books
+package com.terry.repository.repo.books.local
 
 import com.terry.local.model.Review
 import kotlinx.coroutines.flow.Flow

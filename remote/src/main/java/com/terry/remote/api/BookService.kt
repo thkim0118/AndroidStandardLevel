@@ -1,8 +1,8 @@
-package com.terry.books.api
+package com.terry.remote.api
 
-import com.terry.books.model.BestSellerDTO
-import com.terry.books.model.SearchBookDTO
-import retrofit2.Call
+import com.terry.remote.model.BestSellerDTO
+import com.terry.remote.model.SearchBookDTO
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -12,14 +12,14 @@ import retrofit2.http.Query
 interface BookService {
 
     @GET("/api/search.api?output=json")
-    fun getBooksByName(
+    suspend fun getBooksByName(
         @Query("key") apiKey: String,
         @Query("query") keyword: String
-    ): Call<SearchBookDTO>
+    ): Response<SearchBookDTO>
 
     @GET("/api/bestSeller.api?output=json&categoryId=100")
-    fun getBestSellerBooks(
+    suspend fun getBestSellerBooks(
         @Query("key") apiKey: String
-    ): Call<BestSellerDTO>
+    ): Response<BestSellerDTO>
 
 }
