@@ -35,12 +35,6 @@ dependencies {
 
     implementation(Deps.KOTLIN)
 
-    implementation(Deps.MATERIAL)
-
-    implementation(Deps.ANDROIDX_CORE_KTX)
-    implementation(Deps.APPCOMPAT)
-    implementation(Deps.CONSTRAINT_LAYOUT)
-
     implementation(Deps.ROOM_RUNTIME)
     implementation(Deps.ROOM_COMPILER)
 
@@ -50,10 +44,6 @@ dependencies {
     // Dagger Hilt
     implementation(Deps.DAGGER_HILT_ANDROID)
     kapt(Deps.DAGGER_HILT_COMPILER)
-    // Dagger Hilt AndroidX & ViewModel
-    implementation(Deps.DAGGER_HILT_VIEWMODEL)
-    kapt(Deps.DAGGER_HILT_ANDROIDX_HILT_COMPILER)
 
     implementation(Deps.COROUTINES_CORE)
-    implementation(Deps.COROUTINES_ANDROID)
 }

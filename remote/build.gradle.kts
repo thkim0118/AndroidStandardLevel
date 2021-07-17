@@ -44,9 +44,6 @@ dependencies {
     // Dagger Hilt
     implementation(Deps.DAGGER_HILT_ANDROID)
     kapt(Deps.DAGGER_HILT_COMPILER)
-//    // Dagger Hilt AndroidX & ViewModel
-//    implementation(Deps.DAGGER_HILT_VIEWMODEL)
-//    kapt(Deps.DAGGER_HILT_ANDROIDX_HILT_COMPILER)
 
     implementation(Deps.RETROFIT)
     implementation(Deps.RETROFIT_GSON)
