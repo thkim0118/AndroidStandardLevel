@@ -49,7 +49,8 @@ android {
         Modules.DynamicFeature.WEB_VIEWER,
         Modules.DynamicFeature.NOTIFICATION,
         Modules.DynamicFeature.REMOTE_CONFIG,
-        Modules.DynamicFeature.ALARM
+        Modules.DynamicFeature.ALARM,
+        Modules.DynamicFeature.BOOKS
     )
 }
 
@@ -76,5 +77,19 @@ dependencies {
     implementation(Deps.FIREBASE_ANALYTICS)
     implementation(Deps.FIREBASE_MESSAGING)
     implementation(Deps.FIREBASE_CONFIG)
+
+    implementation(Deps.LIFECYCLE_VIEWMODEL)
+
+    implementation(Deps.ROOM_RUNTIME)
+    implementation(Deps.ROOM_COMPILER)
+
+    implementation(Deps.RETROFIT)
+    implementation(Deps.RETROFIT_GSON)
+
+    implementation(Deps.FRAGMENT)
+
+    implementation(Deps.COROUTINE_LIVEDATA)
+    implementation(Deps.LIVEDATA)
+    implementation(Deps.LIVEDATA_RUNTIME)
 
 }

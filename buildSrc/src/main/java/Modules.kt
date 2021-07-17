@@ -7,6 +7,7 @@ object Modules {
     const val CORE = ":core"
 
     const val LOCAL = ":local"
+    const val REMOTE = ":remote"
 
     const val REPOSITORY = ":repository"
 
@@ -22,5 +23,6 @@ object Modules {
         const val NOTIFICATION = ":features:Notification"
         const val REMOTE_CONFIG = ":features:RemoteConfig"
         const val ALARM = ":features:Alarm"
+        const val BOOKS = ":features:books"
     }
 }

@@ -30,7 +30,8 @@ android {
 }
 
 dependencies {
-    api(project(Modules.LOCAL))
+    implementation(project(Modules.LOCAL))
+    implementation(project(Modules.REMOTE))
 
     implementation(Deps.KOTLIN)
 
@@ -42,6 +43,9 @@ dependencies {
 
     implementation(Deps.ROOM_RUNTIME)
     implementation(Deps.ROOM_COMPILER)
+
+    implementation(Deps.RETROFIT)
+    implementation(Deps.RETROFIT_GSON)
 
     // Dagger Hilt
     implementation(Deps.DAGGER_HILT_ANDROID)

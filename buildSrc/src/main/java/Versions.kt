@@ -24,12 +24,16 @@ object AndroidVersion {
 object Version {
     const val CORE_KTX_VERSION = "1.6.0"
     const val FRAGMENT_KTX_VERSION = "1.1.0-rc01"
+
     // Appcompat
     const val APPCOMPAT_VERSION = "1.3.0"
+
     // Material
     const val MATERIAL_VERSION = "1.3.0"
+
     // Lifecycle
     const val LIFECYCLE = "2.3.0"
+
     // ConstraintLayout
     const val CONSTRAINT_LAYOUT_VERSION = "2.0.4"
 
@@ -49,11 +53,16 @@ object Version {
     const val SWIPE_REFRESH_LAYOUT_VERSION = "1.1.0"
 
     const val FIREBASE_VERSION = "28.2.1"
+
+    const val RETROFIT_VERSION = "2.9.0"
+
+    const val GLIDE_VERSION = "4.12.0"
 }
 
 object TestVersion {
     // AndroidX
     const val androidXTestExtKotlinRunnerVersion = "1.1.1"
+
     // Espresso
     const val espressoVersion = "3.2.0"
 }

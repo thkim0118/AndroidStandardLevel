@@ -33,6 +33,7 @@ android {
 
 dependencies {
     api(project(Modules.LOCAL))
+    api(project(Modules.REMOTE))
     api(project(Modules.REPOSITORY))
 
     implementation(Deps.KOTLIN)

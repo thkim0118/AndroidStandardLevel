@@ -1,9 +1,12 @@
 package com.terry.common.di
 
 import com.terry.common.CoreDependency
-import com.terry.repository.usecase.DeleteAllHistoryUseCase
-import com.terry.repository.usecase.GetAllHistoryUseCase
-import com.terry.repository.usecase.InsertHistoryUseCase
+import com.terry.repository.usecase.books.*
+import com.terry.repository.usecase.books.remote.GetBestSellerBooksUseCase
+import com.terry.repository.usecase.books.remote.GetBooksByNameUseCase
+import com.terry.repository.usecase.calculator.DeleteAllHistoryUseCase
+import com.terry.repository.usecase.calculator.GetAllHistoryUseCase
+import com.terry.repository.usecase.calculator.InsertHistoryUseCase
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -16,10 +19,4 @@ import dagger.hilt.components.SingletonComponent
 interface CoreModuleDependencies {
 
     fun coreDependency(): CoreDependency
-
-    fun getHistoryAllUseCase(): GetAllHistoryUseCase
-
-    fun insertHistoryUseCase(): InsertHistoryUseCase
-
-    fun deleteAllHistoryUseCase(): DeleteAllHistoryUseCase
 }

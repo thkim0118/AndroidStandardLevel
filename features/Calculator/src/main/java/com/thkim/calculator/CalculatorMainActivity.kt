@@ -13,7 +13,7 @@ import androidx.core.view.isVisible
 import com.google.android.material.snackbar.Snackbar
 import com.terry.common.LogT
 import com.terry.common.base.BaseActivity
-import com.terry.common.di.CoreModuleDependencies
+import com.terry.common.di.UseCaseDependencies
 import com.terry.local.model.History
 import com.thkim.calculator.databinding.ActivityCalculatorMainBinding
 import com.thkim.calculator.di.DaggerCalculatorComponent
@@ -41,13 +41,13 @@ class CalculatorMainActivity :
     }
 
     private fun initCoreDependentInjection() {
-        val coreModuleDependencies = EntryPointAccessors.fromApplication(
+        val useCaseDependencies = EntryPointAccessors.fromApplication(
             applicationContext,
-            CoreModuleDependencies::class.java
+            UseCaseDependencies::class.java
         )
 
         DaggerCalculatorComponent.factory().create(
-            dependentModule = coreModuleDependencies,
+            dependentModule = useCaseDependencies,
             activity = this
         ).inject(this)
     }
