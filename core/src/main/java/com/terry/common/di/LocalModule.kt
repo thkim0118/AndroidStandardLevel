@@ -1,12 +1,16 @@
 package com.terry.common.di
 
 import com.terry.local.di.DatabaseModule
-import com.terry.repository.repo.books.BookSearchHistoryRepositoryImpl
 import com.terry.repository.repo.books.BookSearchHistoryRepository
+import com.terry.repository.repo.books.BookSearchHistoryRepositoryImpl
+import com.terry.repository.repo.books.ReviewRepository
+import com.terry.repository.repo.books.ReviewRepositoryImpl
 import com.terry.repository.repo.calculator.HistoryRepository
 import com.terry.repository.repo.calculator.HistoryRepositoryImpl
 import com.terry.repository.source.books.BookSearchHistoryDataSource
 import com.terry.repository.source.books.BookSearchHistoryDataSourceImpl
+import com.terry.repository.source.books.ReviewDataSource
+import com.terry.repository.source.books.ReviewDataSourceImpl
 import com.terry.repository.source.calculator.HistoryDataSource
 import com.terry.repository.source.calculator.HistoryDataSourceImpl
 import dagger.Binds
@@ -37,4 +41,13 @@ interface LocalModule {
     @Singleton
     @Binds
     fun bindBookSearchHistoryRepository(repository: BookSearchHistoryRepositoryImpl): BookSearchHistoryRepository
+
+    @Singleton
+    @Binds
+    fun bindReviewDataSource(reviewDataSource: ReviewDataSourceImpl): ReviewDataSource
+
+    @Singleton
+    @Binds
+    fun bindReviewRepository(reviewRepository: ReviewRepositoryImpl): ReviewRepository
+
 }

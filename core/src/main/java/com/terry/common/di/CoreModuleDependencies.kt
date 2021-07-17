@@ -1,9 +1,7 @@
 package com.terry.common.di
 
 import com.terry.common.CoreDependency
-import com.terry.repository.usecase.books.DeleteBookSearchHistoryUseCase
-import com.terry.repository.usecase.books.GetAllSearchHistoryUseCase
-import com.terry.repository.usecase.books.InsertBookSearchHistoryUseCase
+import com.terry.repository.usecase.books.*
 import com.terry.repository.usecase.calculator.DeleteAllHistoryUseCase
 import com.terry.repository.usecase.calculator.GetAllHistoryUseCase
 import com.terry.repository.usecase.calculator.InsertHistoryUseCase
@@ -30,5 +28,9 @@ interface CoreModuleDependencies {
 
     fun insertBookSearchHistoryUseCase(): InsertBookSearchHistoryUseCase
 
-    fun deleteBookSearchHistoryUSeCase(): DeleteBookSearchHistoryUseCase
+    fun deleteBookSearchHistoryUseCase(): DeleteBookSearchHistoryUseCase
+
+    fun getOneReviewUseCase(): GetOneReviewUseCase
+
+    fun saveReviewUseCase(): SaveReviewUseCase
 }

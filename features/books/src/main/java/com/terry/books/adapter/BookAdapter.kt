@@ -12,7 +12,9 @@ import com.terry.books.model.Book
 /*
  * Created by Taehyung Kim on 2021-07-17
  */
-class BookAdapter : ListAdapter<Book, BookAdapter.BookItemViewHolder>(diffUtil) {
+class BookAdapter(
+    private val itemClickedListener: (Book) -> Unit
+) : ListAdapter<Book, BookAdapter.BookItemViewHolder>(diffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookItemViewHolder {
         return BookItemViewHolder(
@@ -28,12 +30,16 @@ class BookAdapter : ListAdapter<Book, BookAdapter.BookItemViewHolder>(diffUtil) 
         holder.bind(currentList[position])
     }
 
-    class BookItemViewHolder(private val binding: ItemBookBinding) :
+    inner class BookItemViewHolder(private val binding: ItemBookBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(bookModel: Book) {
             binding.titleTextView.text = bookModel.title
             binding.descriptionTextView.text = bookModel.description
+
+            binding.root.setOnClickListener {
+                itemClickedListener(bookModel)
+            }
 
             Glide
                 .with(binding.coverImageView.context)

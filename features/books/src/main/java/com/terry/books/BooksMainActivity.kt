@@ -1,5 +1,6 @@
 package com.terry.books
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.MotionEvent
@@ -88,6 +89,7 @@ class BooksMainActivity :
         ).inject(this)
     }
 
+    // search history 에서 아이템을 선택하면 바로 search가 되는 기능
     private fun search(keyword: String) {
         bookService.getBooksByName(BuildConfig.interpark_key, keyword)
             .enqueue(object : Callback<SearchBookDTO> {
@@ -117,7 +119,13 @@ class BooksMainActivity :
     }
 
     private fun initBookRecyclerView() {
-        adapter = BookAdapter()
+        adapter = BookAdapter(itemClickedListener = {
+            val intent = Intent(this, BookDetailActivity::class.java).apply {
+                putExtra("bookModel", it)
+            }
+
+            startActivity(intent)
+        })
 
         binding.bookRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.bookRecyclerView.adapter = adapter

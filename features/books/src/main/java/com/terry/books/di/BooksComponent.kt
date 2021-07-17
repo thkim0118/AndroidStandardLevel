@@ -1,6 +1,7 @@
 package com.terry.books.di
 
 import android.app.Activity
+import com.terry.books.BookDetailActivity
 import com.terry.books.BooksMainActivity
 import com.terry.common.di.CoreModuleDependencies
 import dagger.BindsInstance
@@ -16,6 +17,7 @@ import dagger.Component
 interface BooksComponent {
 
     fun inject(booksMainActivity: BooksMainActivity)
+    fun inject(bookDetailActivity: BookDetailActivity)
 
     @Component.Factory
     interface Factory {

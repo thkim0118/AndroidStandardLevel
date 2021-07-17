@@ -26,6 +26,7 @@ object Plugins {
     const val ANDROID_DYNAMIC_FEATURE_PLUGIN = "com.android.dynamic-feature"
     const val ANDROID_LIBRARY_PLUGIN = "com.android.library"
     const val GOOGLE_SERVICE = "com.google.gms.google-services"
+    const val KOTLIN_PARCELIZE = "kotlin-parcelize"
 
     const val KOTLIN_ANDROID_PLUGIN = "kotlin-android"
     const val KOTLIN_ANDROID_EXTENSIONS_PLUGIN = "kotlin-android-extensions"

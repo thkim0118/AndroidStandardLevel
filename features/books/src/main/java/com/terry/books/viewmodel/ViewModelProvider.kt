@@ -2,9 +2,7 @@ package com.terry.books.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.terry.repository.usecase.books.DeleteBookSearchHistoryUseCase
-import com.terry.repository.usecase.books.GetAllSearchHistoryUseCase
-import com.terry.repository.usecase.books.InsertBookSearchHistoryUseCase
+import com.terry.repository.usecase.books.*
 import javax.inject.Inject
 
 /*
@@ -26,6 +24,25 @@ class BooksViewModelProvider @Inject constructor(
             getAllSearchHistoryUseCase,
             insertBookSearchHistoryUseCase,
             deleteBookSearchHistoryUseCase
+        ) as T
+    }
+
+}
+
+class BooksDetailViewModelProvider @Inject constructor(
+    private val getOneReviewUseCase: GetOneReviewUseCase,
+    private val saveReviewUseCase: SaveReviewUseCase
+) : ViewModelProvider.Factory {
+
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if (modelClass != BookDetailViewModel::class.java) {
+            throw IllegalArgumentException("Unknown ViewModel class")
+        }
+
+        return BookDetailViewModel(
+            getOneReviewUseCase,
+            saveReviewUseCase
         ) as T
     }
 
