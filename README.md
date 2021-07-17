@@ -1,22 +1,45 @@
 # AndroidStandardLevel
+## Tech Stack
+* Room
+* Retrofit
+* Hilt DI
+* MVVM
+* LiveData
+* Coroutine
+* Repository Pattern(Domain Layer)
+* Use Case pattern(Domain Layer)
+
+## Module
+* features
+  * 기능 별로 분류
+* core
+  * DI, Util, Base 등 공통 사용 클래스
+* local
+  * Internal Database(Room), Model, Dao, Local DI(Database, Dao)
+* remote
+  * Remote Rest API(Retrofit), Model, DTO, API Interface, Remote DI(Retrofit, Api class)
+* repository
+  * Data Source, Repository, Use Case
+
 
 ## features
+### Alarm
+- BroadcastReceiver
+- AlarmManager
+- PendingIntent
+- TiemPickerDialog
+
 ### AudioRecorder
 - Custom View([RecordButton.kt](https://github.com/thkim0118/AndroidStandardLevel/blob/master/features/AudioRecorder/src/main/java/com/terry/recorder/RecordButton.kt), [SoundVisualizerView.kt](https://github.com/thkim0118/AndroidStandardLevel/blob/master/features/AudioRecorder/src/main/java/com/terry/recorder/SoundVisualizerView.kt), [CountUpView.kt](https://github.com/thkim0118/AndroidStandardLevel/blob/master/features/AudioRecorder/src/main/java/com/terry/recorder/CountUpView.kt))
 - MediaPlayer
 - MediaRecorder
 - Audio Record Permission
 
-### WebViewer
-- WebView
-  - WebViewClient
-  - WebChromeClient
-- EditText
-  - imeOptions
-  - inputType
-  - selectAllOnFocus
-- SwipeRefreshLayout
-- ContentLoadingProgressBar
+### Books
+- Retrofit
+- Room
+  - Migration
+  - Insert, Query
 
 ### Notification
 - Firebase Messaging
@@ -38,8 +61,13 @@
 - ViewPager2
   - infinite scroll pager
 
-### Alarm
-- BroadcastReceiver
-- AlarmManager
-- PendingIntent
-- TiemPickerDialog
+### WebViewer
+- WebView
+  - WebViewClient
+  - WebChromeClient
+- EditText
+  - imeOptions
+  - inputType
+  - selectAllOnFocus
+- SwipeRefreshLayout
+- ContentLoadingProgressBar
