@@ -16,6 +16,7 @@ import com.terry.common.base.BaseActivity
 import com.terry.common.di.UseCaseDependencies
 import com.terry.common.util.KeyboardUtil
 import com.terry.local.model.BookSearchHistory
+import com.terry.remote.model.Book
 import dagger.hilt.android.EntryPointAccessors
 import javax.inject.Inject
 
@@ -25,9 +26,13 @@ class BooksMainActivity :
     private lateinit var adapter: BookAdapter
     private lateinit var bookSearchHistoryAdapter: BookSearchHistoryAdapter
 
-    private var keywords: MutableList<BookSearchHistory> = mutableListOf()
+    private var searchedHistory: MutableList<BookSearchHistory> = mutableListOf()
 
     private val keyboardUtil: KeyboardUtil by lazy { KeyboardUtil.getInstance(this) }
+
+    private var bestSellerItem: List<Book> = emptyList()
+
+    private var isSearchAction: Boolean = false
 
     @Inject
     lateinit var viewModel: BooksViewModel
@@ -39,9 +44,25 @@ class BooksMainActivity :
         initBookRecyclerView()
         initSearchHistoryRecyclerView()
         initSearchEditText()
+
         getSearchHistoryData()
         getBestSellerBooks()
+
         observeLiveData()
+    }
+
+    override fun onBackPressed() {
+        if (binding.historyRecyclerView.isVisible) {
+            hideHistoryView()
+            return
+        }
+
+        if (isSearchAction) {
+            backToBestSellerView()
+            return
+        }
+
+        super.onBackPressed()
     }
 
     private fun initCoreDependentInjection() {
@@ -63,12 +84,15 @@ class BooksMainActivity :
 
     private fun observeBestSellerResponse() {
         viewModel.bestSellerResponse.observe(this) {
+            bestSellerItem = it
             adapter.submitList(it)
         }
     }
 
     private fun observeSearchBooksResponse() {
         viewModel.searchBookResponse.observe(this) {
+            isSearchAction = true
+
             hideHistoryView()
 
             adapter.submitList(it)
@@ -79,7 +103,6 @@ class BooksMainActivity :
         viewModel.getBestSellerBooks(BuildConfig.interpark_key)
     }
 
-    // search history 에서 아이템을 선택하면 바로 search가 되는 기능
     private fun search(keyword: String) {
         keyboardUtil.hideKeyboard(binding.searchEditText)
         viewModel.getBooksByName(BuildConfig.interpark_key, keyword)
@@ -99,12 +122,12 @@ class BooksMainActivity :
     }
 
     private fun initSearchHistoryRecyclerView() {
-        bookSearchHistoryAdapter = BookSearchHistoryAdapter({
-            viewModel.deleteSearchKeyword(it)
+        bookSearchHistoryAdapter = BookSearchHistoryAdapter({ deleteItem ->
+            viewModel.deleteSearchKeyword(deleteItem)
             showHistoryView()
-        }, {
-            binding.searchEditText.setText(it)
-            search(it)
+        }, { searchItem ->
+            binding.searchEditText.setText(searchItem)
+            search(searchItem)
         })
 
         binding.historyRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -132,19 +155,24 @@ class BooksMainActivity :
     private fun getSearchHistoryData() {
         viewModel.getAllBookSearchHistory().observe(this) {
             LogT.d("Trigger -> $it")
-            keywords = it.toMutableList()
+            searchedHistory = it.toMutableList()
 
-            bookSearchHistoryAdapter.submitList(keywords.reversed().orEmpty())
+            bookSearchHistoryAdapter.submitList(searchedHistory.reversed().orEmpty())
         }
     }
 
     private fun showHistoryView() {
-        bookSearchHistoryAdapter.submitList(keywords.reversed().orEmpty())
+        bookSearchHistoryAdapter.submitList(searchedHistory.reversed().orEmpty())
 
         binding.historyRecyclerView.isVisible = true
     }
 
     private fun hideHistoryView() {
         binding.historyRecyclerView.isVisible = false
+    }
+
+    private fun backToBestSellerView() {
+        isSearchAction = false
+        adapter.submitList(bestSellerItem)
     }
 }
