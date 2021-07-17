@@ -14,6 +14,7 @@ import com.terry.books.viewmodel.BooksViewModel
 import com.terry.common.LogT
 import com.terry.common.base.BaseActivity
 import com.terry.common.di.UseCaseDependencies
+import com.terry.common.util.KeyboardUtil
 import com.terry.local.model.BookSearchHistory
 import dagger.hilt.android.EntryPointAccessors
 import javax.inject.Inject
@@ -25,6 +26,8 @@ class BooksMainActivity :
     private lateinit var bookSearchHistoryAdapter: BookSearchHistoryAdapter
 
     private var keywords: MutableList<BookSearchHistory> = mutableListOf()
+
+    private val keyboardUtil: KeyboardUtil by lazy { KeyboardUtil.getInstance(this) }
 
     @Inject
     lateinit var viewModel: BooksViewModel
@@ -108,6 +111,7 @@ class BooksMainActivity :
         binding.searchEditText.setOnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == MotionEvent.ACTION_DOWN) {
                 search(binding.searchEditText.text.toString())
+                keyboardUtil.hideKeyboard(binding.searchEditText)
                 return@setOnKeyListener true
             }
 
@@ -127,9 +131,7 @@ class BooksMainActivity :
             LogT.d("Trigger -> $it")
             keywords = it.toMutableList()
 
-            runOnUiThread {
-                bookSearchHistoryAdapter.submitList(keywords.reversed().orEmpty())
-            }
+            bookSearchHistoryAdapter.submitList(keywords.reversed().orEmpty())
         }
     }
 
