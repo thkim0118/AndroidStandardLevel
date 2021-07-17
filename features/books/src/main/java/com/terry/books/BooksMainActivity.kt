@@ -81,6 +81,7 @@ class BooksMainActivity :
 
     // search history 에서 아이템을 선택하면 바로 search가 되는 기능
     private fun search(keyword: String) {
+        keyboardUtil.hideKeyboard(binding.searchEditText)
         viewModel.getBooksByName(BuildConfig.interpark_key, keyword)
     }
 
@@ -98,10 +99,13 @@ class BooksMainActivity :
     }
 
     private fun initSearchHistoryRecyclerView() {
-        bookSearchHistoryAdapter = BookSearchHistoryAdapter {
+        bookSearchHistoryAdapter = BookSearchHistoryAdapter({
             viewModel.deleteSearchKeyword(it)
             showHistoryView()
-        }
+        }, {
+            binding.searchEditText.setText(it)
+            search(it)
+        })
 
         binding.historyRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.historyRecyclerView.adapter = bookSearchHistoryAdapter
@@ -111,7 +115,6 @@ class BooksMainActivity :
         binding.searchEditText.setOnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == MotionEvent.ACTION_DOWN) {
                 search(binding.searchEditText.text.toString())
-                keyboardUtil.hideKeyboard(binding.searchEditText)
                 return@setOnKeyListener true
             }
 

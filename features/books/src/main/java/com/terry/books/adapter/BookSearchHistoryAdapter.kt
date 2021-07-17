@@ -12,7 +12,8 @@ import com.terry.local.model.BookSearchHistory
  * Created by Taehyung Kim on 2021-07-17
  */
 class BookSearchHistoryAdapter(
-    val historyDeleteListener: (String) -> Unit
+    val historyDeleteListener: (String) -> Unit,
+    val itemClickedListener: (String) -> Unit
 ) : ListAdapter<BookSearchHistory, BookSearchHistoryAdapter.BookSearchHistoryItemViewHolder>(
     diffUtil
 ) {
@@ -26,7 +27,9 @@ class BookSearchHistoryAdapter(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),
+            historyDeleteListener,
+            itemClickedListener
         )
     }
 
@@ -34,14 +37,21 @@ class BookSearchHistoryAdapter(
         holder.bind(currentList[position])
     }
 
-    inner class BookSearchHistoryItemViewHolder(private val binding: ItemBookSearchHistoryBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class BookSearchHistoryItemViewHolder(
+        private val binding: ItemBookSearchHistoryBinding,
+        private val historyDeleteListener: (String) -> Unit,
+        private val itemClickedListener: (String) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(searchHistory: BookSearchHistory) {
             binding.historyKeywordTextView.text = searchHistory.keyword
 
             binding.historyKeywordDeleteButton.setOnClickListener {
                 historyDeleteListener(searchHistory.keyword.orEmpty())
+            }
+
+            binding.historyKeywordTextView.setOnClickListener {
+                itemClickedListener(searchHistory.keyword.orEmpty())
             }
         }
     }
