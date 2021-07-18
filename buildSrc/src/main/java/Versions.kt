@@ -38,8 +38,7 @@ object Version {
     const val CONSTRAINT_LAYOUT_VERSION = "2.0.4"
 
     // Dagger
-    const val DAGGER_VERSION = "2.36"
-    const val DAGGER_HILT_VERSION = "2.33-beta"
+    const val DAGGER_HILT_VERSION = "2.37"
     const val DAGGER_HILT_ANDRIODX = "1.0.0-alpha02"
 
     // ROOM
@@ -57,6 +56,9 @@ object Version {
     const val RETROFIT_VERSION = "2.9.0"
 
     const val GLIDE_VERSION = "4.12.0"
+
+    // Facebook
+    const val FACEBOOK_LOGIN_VERSION = "8.2.0"
 }
 
 object TestVersion {

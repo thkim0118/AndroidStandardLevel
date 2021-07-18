@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id(Plugins.ANDROID_APPLICATION_PLUGIN)
     id(Plugins.KOTLIN_ANDROID_PLUGIN)
@@ -17,6 +19,12 @@ android {
         versionName = AndroidVersion.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val fbAppId = gradleLocalProperties(rootDir).getProperty("facebook.app.id")
+        val fbLoginProtocolScheme =
+            gradleLocalProperties(rootDir).getProperty("facebook.login.protocol.scheme")
+        resValue("string", "facebook_app_id", fbAppId)
+        resValue("string", "fb_login_protocol_scheme", fbLoginProtocolScheme)
     }
 
     buildTypes {
@@ -50,7 +58,8 @@ android {
         Modules.DynamicFeature.NOTIFICATION,
         Modules.DynamicFeature.REMOTE_CONFIG,
         Modules.DynamicFeature.ALARM,
-        Modules.DynamicFeature.BOOKS, ":features:Tinder"
+        Modules.DynamicFeature.BOOKS,
+        Modules.DynamicFeature.TINDER
     )
 }
 
@@ -77,6 +86,8 @@ dependencies {
     implementation(Deps.FIREBASE_ANALYTICS)
     implementation(Deps.FIREBASE_MESSAGING)
     implementation(Deps.FIREBASE_CONFIG)
+    implementation(Deps.FIREBASE_AUTH)
+    implementation(Deps.FIREBASE_DATABASE)
 
     implementation(Deps.LIFECYCLE_VIEWMODEL)
 
@@ -91,5 +102,7 @@ dependencies {
     implementation(Deps.COROUTINE_LIVEDATA)
     implementation(Deps.LIVEDATA)
     implementation(Deps.LIVEDATA_RUNTIME)
+
+    implementation(Deps.FACEBOOK_LOGIN)
 
 }

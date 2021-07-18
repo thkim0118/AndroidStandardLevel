@@ -54,6 +54,10 @@ object Deps {
         "com.google.firebase:firebase-messaging-ktx"
     const val FIREBASE_CONFIG =
         "com.google.firebase:firebase-config-ktx"
+    const val FIREBASE_AUTH =
+        "com.google.firebase:firebase-auth-ktx"
+    const val FIREBASE_DATABASE =
+        "com.google.firebase:firebase-database-ktx"
 
     const val RETROFIT =
         "com.squareup.retrofit2:retrofit:${Version.RETROFIT_VERSION}"
@@ -63,6 +67,9 @@ object Deps {
 
     const val GLIDE =
         "com.github.bumptech.glide:glide:${Version.GLIDE_VERSION}"
+
+    const val FACEBOOK_LOGIN =
+        "com.facebook.android:facebook-login:${Version.FACEBOOK_LOGIN_VERSION}"
 }
 
 object TestLibs {
