@@ -45,4 +45,5 @@ dependencies {
     implementation(Deps.FIREBASE_DATABASE)
 
     implementation(Deps.FACEBOOK_LOGIN)
+    implementation(Deps.CARD_STACK_VIEW)
 }

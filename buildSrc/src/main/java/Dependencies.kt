@@ -70,6 +70,9 @@ object Deps {
 
     const val FACEBOOK_LOGIN =
         "com.facebook.android:facebook-login:${Version.FACEBOOK_LOGIN_VERSION}"
+
+    const val CARD_STACK_VIEW =
+        "com.yuyakaido.android:card-stack-view:${Version.CARD_STACK_VIEW_VERSION}"
 }
 
 object TestLibs {

@@ -59,6 +59,9 @@ object Version {
 
     // Facebook
     const val FACEBOOK_LOGIN_VERSION = "8.2.0"
+
+    // CardStackView
+    const val CARD_STACK_VIEW_VERSION = "2.3.4"
 }
 
 object TestVersion {
