@@ -8,4 +8,5 @@
     <string name="title_alram">Alram</string>
     <string name="title_books">Books</string>
     <string name="title_tinder">Tinder</string>
+    <string name="title_transaction">Transaction</string>
 </resources>

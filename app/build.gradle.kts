@@ -59,7 +59,8 @@ android {
         Modules.DynamicFeature.REMOTE_CONFIG,
         Modules.DynamicFeature.ALARM,
         Modules.DynamicFeature.BOOKS,
-        Modules.DynamicFeature.TINDER
+        Modules.DynamicFeature.TINDER,
+        Modules.DynamicFeature.TRANSACTION
     )
 }
 
