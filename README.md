@@ -8,6 +8,7 @@
 * Coroutine
 * Repository Pattern(Domain Layer)
 * Use Case pattern(Domain Layer)
+* Multi Module
 
 ## Module
 * features
@@ -71,3 +72,10 @@
   - selectAllOnFocus
 - SwipeRefreshLayout
 - ContentLoadingProgressBar
+
+### Tinder
+- Firebase Login
+  - Email
+  - Facebook
+- Firebase Realtime Database
+
