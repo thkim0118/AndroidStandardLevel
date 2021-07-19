@@ -2,7 +2,7 @@
  * Created by Taehyung Kim on 2021-07-04
  */
 object PluginVersion {
-    const val KOTLIN_VERSION = "1.4.30"
+    const val KOTLIN_VERSION = "1.5.10"
     const val GRADLE_VERSION = "4.2.1"
 
     const val NAV_SAFE_ARGS_VERSION = "2.3.0"
@@ -38,8 +38,7 @@ object Version {
     const val CONSTRAINT_LAYOUT_VERSION = "2.0.4"
 
     // Dagger
-    const val DAGGER_VERSION = "2.36"
-    const val DAGGER_HILT_VERSION = "2.33-beta"
+    const val DAGGER_HILT_VERSION = "2.37"
     const val DAGGER_HILT_ANDRIODX = "1.0.0-alpha02"
 
     // ROOM
@@ -57,6 +56,12 @@ object Version {
     const val RETROFIT_VERSION = "2.9.0"
 
     const val GLIDE_VERSION = "4.12.0"
+
+    // Facebook
+    const val FACEBOOK_LOGIN_VERSION = "8.2.0"
+
+    // CardStackView
+    const val CARD_STACK_VIEW_VERSION = "2.3.4"
 }
 
 object TestVersion {

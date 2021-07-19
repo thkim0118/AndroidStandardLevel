@@ -24,5 +24,6 @@ object Modules {
         const val REMOTE_CONFIG = ":features:RemoteConfig"
         const val ALARM = ":features:Alarm"
         const val BOOKS = ":features:books"
+        const val TINDER = ":features:Tinder"
     }
 }
