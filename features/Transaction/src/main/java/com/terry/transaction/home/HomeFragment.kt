@@ -1,8 +1,10 @@
 package com.terry.transaction.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -10,6 +12,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.terry.common.LogT
 import com.terry.common.base.BaseFragment
 import com.terry.common.util.FirebaseDBKey
 import com.terry.transaction.databinding.FragmentHomeBinding
@@ -56,6 +59,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
         binding.articleRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.articleRecyclerView.adapter = articleAdapter
+
+        binding.addFloatingButton.setOnClickListener {
+            if (auth.currentUser != null) {
+                LogT.d("displayName -> ${auth.currentUser?.displayName}")
+                LogT.d("email -> ${auth.currentUser?.email}")
+                val intent = Intent(requireContext(), AddArticleActivity::class.java)
+                startActivity(intent)
+            } else {
+                Snackbar.make(view, "로그인 후 사용해주세요.", Snackbar.LENGTH_SHORT).show()
+            }
+        }
 
         articleDB.addChildEventListener(listener)
     }
