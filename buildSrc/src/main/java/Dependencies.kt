@@ -58,6 +58,8 @@ object Deps {
         "com.google.firebase:firebase-auth-ktx"
     const val FIREBASE_DATABASE =
         "com.google.firebase:firebase-database-ktx"
+    const val FIREBASE_STORAGE =
+        "com.google.firebase:firebase-storage-ktx"
 
     const val RETROFIT =
         "com.squareup.retrofit2:retrofit:${Version.RETROFIT_VERSION}"

@@ -14,7 +14,11 @@
     </dist:module>
 
     <application>
-        <activity android:name=".TransactionMainActivity"></activity>
+        <activity
+            android:name=".TransactionMainActivity"
+            android:theme="@style/Theme.AndroidStandardLevel.Transaction">
+
+        </activity>
     </application>
 
 </manifest>

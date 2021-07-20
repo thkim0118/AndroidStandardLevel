@@ -43,4 +43,7 @@ dependencies {
     implementation(Deps.FIREBASE_ANALYTICS)
     implementation(Deps.FIREBASE_AUTH)
     implementation(Deps.FIREBASE_DATABASE)
+    implementation(Deps.FIREBASE_STORAGE)
+
+    implementation(Deps.GLIDE)
 }

@@ -89,6 +89,7 @@ dependencies {
     implementation(Deps.FIREBASE_CONFIG)
     implementation(Deps.FIREBASE_AUTH)
     implementation(Deps.FIREBASE_DATABASE)
+    implementation(Deps.FIREBASE_STORAGE)
 
     implementation(Deps.LIFECYCLE_VIEWMODEL)
 
@@ -105,5 +106,7 @@ dependencies {
     implementation(Deps.LIVEDATA_RUNTIME)
 
     implementation(Deps.FACEBOOK_LOGIN)
+
+    implementation(Deps.GLIDE)
 
 }

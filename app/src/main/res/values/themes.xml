@@ -37,4 +37,10 @@
         <item name="android:statusBarColor">#222222</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
+
+    <style name="Theme.AndroidStandardLevel.Transaction" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
 </resources>
