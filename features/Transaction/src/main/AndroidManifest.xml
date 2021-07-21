@@ -19,11 +19,15 @@
     <application>
         <activity
             android:name=".TransactionMainActivity"
-            android:theme="@style/Theme.AndroidStandardLevel.Transaction">
+            android:theme="@style/Theme.AndroidStandardLevel.Transaction.NoActionBar">
 
         </activity>
 
-        <activity android:name=".home.AddArticleActivity" />
+        <activity
+            android:name=".home.AddArticleActivity"
+            android:theme="@style/Theme.AndroidStandardLevel.Transaction.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>
