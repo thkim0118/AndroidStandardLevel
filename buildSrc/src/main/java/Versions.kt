@@ -29,7 +29,7 @@ object Version {
     const val APPCOMPAT_VERSION = "1.3.0"
 
     // Material
-    const val MATERIAL_VERSION = "1.3.0"
+    const val MATERIAL_VERSION = "1.4.0"
 
     // Lifecycle
     const val LIFECYCLE = "2.3.0"

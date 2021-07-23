@@ -60,7 +60,8 @@ android {
         Modules.DynamicFeature.ALARM,
         Modules.DynamicFeature.BOOKS,
         Modules.DynamicFeature.TINDER,
-        Modules.DynamicFeature.TRANSACTION
+        Modules.DynamicFeature.TRANSACTION,
+        Modules.DynamicFeature.AIRBNB
     )
 }
 

@@ -20,6 +20,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 //        startActivity("com.terry.alram.AlarmMainActivity")
 //        startActivity("com.terry.books.BooksMainActivity")
 //        startActivity("com.terry.tinder.TinderMainActivity")
-        startActivity("com.terry.transaction.TransactionMainActivity")
+//        startActivity("com.terry.transaction.TransactionMainActivity")
+        startActivity("com.terry.airbnb.AirbnbMainActivity")
     }
 }
