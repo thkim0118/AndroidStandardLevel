@@ -110,4 +110,6 @@ dependencies {
 
     implementation(Deps.GLIDE)
 
+    implementation(Deps.NAVER_MAP)
+
 }

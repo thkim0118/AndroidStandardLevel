@@ -75,6 +75,9 @@ object Deps {
 
     const val CARD_STACK_VIEW =
         "com.yuyakaido.android:card-stack-view:${Version.CARD_STACK_VIEW_VERSION}"
+
+    const val NAVER_MAP =
+        "com.naver.maps:map-sdk:${Version.NAVER_MAP_VERSION}"
 }
 
 object TestLibs {

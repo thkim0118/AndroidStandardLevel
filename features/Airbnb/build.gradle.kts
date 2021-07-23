@@ -42,4 +42,6 @@ dependencies {
     implementation(Deps.RETROFIT)
     implementation(Deps.RETROFIT_GSON)
     implementation(Deps.GLIDE)
+
+    implementation(Deps.NAVER_MAP)
 }

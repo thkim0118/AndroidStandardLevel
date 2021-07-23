@@ -62,6 +62,9 @@ object Version {
 
     // CardStackView
     const val CARD_STACK_VIEW_VERSION = "2.3.4"
+
+    // Naver map sdk
+    const val NAVER_MAP_VERSION = "3.12.0"
 }
 
 object TestVersion {
