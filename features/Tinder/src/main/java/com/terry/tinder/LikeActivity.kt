@@ -11,6 +11,7 @@ import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.terry.common.base.BaseActivity
+import com.terry.common.util.FirebaseDBKey
 import com.terry.tinder.databinding.ActivityLikeBinding
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
@@ -35,11 +36,11 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>(ActivityLikeBinding::infl
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        userDB = Firebase.database.reference.child(DBKey.USERS)
+        userDB = Firebase.database.reference.child(FirebaseDBKey.DB_USERS)
         val currentUserDB = userDB.child(getCurrentUserId())
         currentUserDB.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.child(DBKey.NAME).value == null) {
+                if (snapshot.child(FirebaseDBKey.NAME).value == null) {
                     showNameInputPopup()
                     return
                 }
@@ -84,14 +85,14 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>(ActivityLikeBinding::infl
     private fun getUnSelectedUsers() {
         userDB.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-                if (snapshot.child(DBKey.USER_ID).value != getCurrentUserId()
-                    && snapshot.child(DBKey.LIKED_BY).child(DBKey.LIKE).hasChild(getCurrentUserId()).not()
-                    && snapshot.child(DBKey.LIKED_BY).child(DBKey.DISLIKE).hasChild(getCurrentUserId()).not()
+                if (snapshot.child(FirebaseDBKey.USER_ID).value != getCurrentUserId()
+                    && snapshot.child(FirebaseDBKey.LIKED_BY).child(FirebaseDBKey.LIKE).hasChild(getCurrentUserId()).not()
+                    && snapshot.child(FirebaseDBKey.LIKED_BY).child(FirebaseDBKey.DISLIKE).hasChild(getCurrentUserId()).not()
                 ) {
-                    val userId = snapshot.child(DBKey.USER_ID).value.toString()
+                    val userId = snapshot.child(FirebaseDBKey.USER_ID).value.toString()
                     var name = "undecided"
-                    if (snapshot.child(DBKey.NAME).value != null) {
-                        name = snapshot.child(DBKey.NAME).value.toString()
+                    if (snapshot.child(FirebaseDBKey.NAME).value != null) {
+                        name = snapshot.child(FirebaseDBKey.NAME).value.toString()
                     }
 
                     cardItem.add(CardItem(userId, name))
@@ -102,7 +103,7 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>(ActivityLikeBinding::infl
 
             override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
                 cardItem.find { it.userId == snapshot.key }?.let {
-                    it.name = snapshot.child(DBKey.NAME).value.toString()
+                    it.name = snapshot.child(FirebaseDBKey.NAME).value.toString()
                 }
 
                 adapter.submitList(cardItem)
@@ -140,8 +141,8 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>(ActivityLikeBinding::infl
         val userId = getCurrentUserId()
         val currentUserDB = userDB.child(userId)
         val user = mutableMapOf<String, Any>()
-        user[DBKey.USER_ID] = userId
-        user[DBKey.NAME] = name
+        user[FirebaseDBKey.USER_ID] = userId
+        user[FirebaseDBKey.NAME] = name
         currentUserDB.updateChildren(user)
 
         getUnSelectedUsers()
@@ -161,8 +162,8 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>(ActivityLikeBinding::infl
         cardItem.removeFirst()
 
         userDB.child(card.userId)
-            .child(DBKey.LIKED_BY)
-            .child(DBKey.LIKE)
+            .child(FirebaseDBKey.LIKED_BY)
+            .child(FirebaseDBKey.LIKE)
             .child(getCurrentUserId())
             .setValue(true)
 
@@ -176,8 +177,8 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>(ActivityLikeBinding::infl
         cardItem.removeFirst()
 
         userDB.child(card.userId)
-            .child(DBKey.LIKED_BY)
-            .child(DBKey.DISLIKE)
+            .child(FirebaseDBKey.LIKED_BY)
+            .child(FirebaseDBKey.DISLIKE)
             .child(getCurrentUserId())
             .setValue(true)
 
@@ -186,19 +187,19 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>(ActivityLikeBinding::infl
 
     private fun saveMatchIfOtherUserLikedMe(otherUserId: String) {
         val otherUserDB =
-            userDB.child(getCurrentUserId()).child(DBKey.LIKED_BY).child(DBKey.LIKE).child(otherUserId)
+            userDB.child(getCurrentUserId()).child(FirebaseDBKey.LIKED_BY).child(FirebaseDBKey.LIKE).child(otherUserId)
         otherUserDB.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.value == true) {
                     userDB.child(getCurrentUserId())
-                        .child(DBKey.LIKED_BY)
-                        .child(DBKey.MATCH)
+                        .child(FirebaseDBKey.LIKED_BY)
+                        .child(FirebaseDBKey.MATCH)
                         .child(otherUserId)
                         .setValue(true)
 
                     userDB.child(otherUserId)
-                        .child(DBKey.LIKED_BY)
-                        .child(DBKey.MATCH)
+                        .child(FirebaseDBKey.LIKED_BY)
+                        .child(FirebaseDBKey.MATCH)
                         .child(getCurrentUserId())
                         .setValue(true)
                 }

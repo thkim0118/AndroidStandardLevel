@@ -8,6 +8,7 @@ import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.terry.common.base.BaseActivity
+import com.terry.common.util.FirebaseDBKey
 import com.terry.tinder.databinding.ActivityMatchBinding
 
 /*
@@ -38,7 +39,7 @@ class MatchedUserActivity : BaseActivity<ActivityMatchBinding>(ActivityMatchBind
     }
 
     private fun getMatchUsers() {
-        val matchedDB = userDB.child(getCurrentUserId()).child(DBKey.LIKED_BY).child(DBKey.MATCH)
+        val matchedDB = userDB.child(getCurrentUserId()).child(FirebaseDBKey.LIKED_BY).child(FirebaseDBKey.MATCH)
 
         matchedDB.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
@@ -65,7 +66,7 @@ class MatchedUserActivity : BaseActivity<ActivityMatchBinding>(ActivityMatchBind
     private fun getUserByKey(userId: String) {
         userDB.child(userId).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                cardItems.add(CardItem(userId, snapshot.child(DBKey.NAME).value.toString()))
+                cardItems.add(CardItem(userId, snapshot.child(FirebaseDBKey.NAME).value.toString()))
                 adapter.submitList(cardItems)
             }
 

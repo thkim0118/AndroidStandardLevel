@@ -14,6 +14,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.terry.common.base.BaseActivity
+import com.terry.common.util.FirebaseDBKey
 import com.terry.tinder.databinding.ActivityLoginBinding
 
 /*
@@ -136,7 +137,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         val userId = auth.currentUser?.uid.orEmpty()
         val currentUserDB = Firebase.database.reference.child("Users").child(userId)
         val user = mutableMapOf<String, Any>()
-        user[DBKey.USER_ID] = userId
+        user[FirebaseDBKey.USER_ID] = userId
         currentUserDB.updateChildren(user)
 
         finish()

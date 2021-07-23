@@ -21,4 +21,7 @@
     <color name="textColor">#555555</color>
     <color name="buttonGreen">#7aaf3b</color>
     <color name="buttonPressGreen">#618c2f</color>
+
+    <color name="orange">#f27f35</color>
+
 </resources>
