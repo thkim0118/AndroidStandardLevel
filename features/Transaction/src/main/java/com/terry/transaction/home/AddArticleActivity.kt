@@ -28,7 +28,7 @@ class AddArticleActivity :
 
     private val storage by lazy { Firebase.storage }
 
-    private val articleDB by lazy { Firebase.database.reference.child(FirebaseDBKey.ARTICLES) }
+    private val articleDB by lazy { Firebase.database.reference.child(FirebaseDBKey.DB_ARTICLES) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

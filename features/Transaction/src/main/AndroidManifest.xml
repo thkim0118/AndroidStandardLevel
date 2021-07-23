@@ -28,6 +28,8 @@
             android:theme="@style/Theme.AndroidStandardLevel.Transaction.NoActionBar">
 
         </activity>
+
+        <activity android:name=".chatdetail.ChatRoomActivity" />
     </application>
 
 </manifest>

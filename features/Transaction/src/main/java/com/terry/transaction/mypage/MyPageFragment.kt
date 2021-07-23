@@ -19,6 +19,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(FragmentMypageBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // TODO: 2021-07-23 회원 정보 입력 창(ex 닉네임)
         binding.signUpButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
@@ -26,17 +27,9 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(FragmentMypageBinding
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(requireActivity()) { task ->
                     if (task.isSuccessful) {
-                        Snackbar.make(
-                            binding.root,
-                            "회원 가입에 성공했습니다. 로그인 버튼을 눌러주세요.",
-                            Snackbar.LENGTH_SHORT
-                        ).show()
+                        showSnackbar("회원 가입에 성공했습니다. 로그인 버튼을 눌러주세요.")
                     } else {
-                        Snackbar.make(
-                            binding.root,
-                            "회원 가입에 실패했습니다. 이메일 또는 비밀번호를 확인해주세요.",
-                            Snackbar.LENGTH_SHORT
-                        ).show()
+                        showSnackbar("회원 가입에 실패했습니다. 이메일 또는 비밀번호를 확인해주세요.")
                     }
                 }
         }
@@ -51,11 +44,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(FragmentMypageBinding
                         if (task.isSuccessful) {
                             successSignIn()
                         } else {
-                            Snackbar.make(
-                                binding.root,
-                                "로그인에 실패했습니다. 이메일 또는 비밀번호를 확인해주세요.",
-                                Snackbar.LENGTH_SHORT
-                            ).show()
+                            showSnackbar("로그인에 실패했습니다. 이메일 또는 비밀번호를 확인해주세요.")
                         }
                     }
             } else {
@@ -113,7 +102,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(FragmentMypageBinding
 
     private fun successSignIn() {
         if (auth.currentUser == null) {
-            Snackbar.make(binding.root, "로그인에 실패하였습니다. 다시 시도해주세요.", Snackbar.LENGTH_SHORT).show()
+            showSnackbar("로그인에 실패하였습니다. 다시 시도해주세요.")
             return
         }
 
@@ -123,4 +112,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(FragmentMypageBinding
         binding.signInOutButton.text = "로그아웃"
     }
 
+    private fun showSnackbar(msg: String) {
+        Snackbar.make(requireContext(), binding.root, msg, Snackbar.LENGTH_SHORT).show()
+    }
 }

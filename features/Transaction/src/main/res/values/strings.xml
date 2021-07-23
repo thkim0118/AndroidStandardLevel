@@ -9,4 +9,6 @@
     <string name="content_title">글 제목</string>
     <string name="register_image">이미지 등록하기</string>
     <string name="register">등록하기</string>
+    <string name="chat_room_list">채팅방 목록</string>
+    <string name="send">전송</string>
 </resources>

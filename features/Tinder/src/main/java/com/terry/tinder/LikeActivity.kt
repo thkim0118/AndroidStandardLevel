@@ -36,7 +36,7 @@ class LikeActivity : BaseActivity<ActivityLikeBinding>(ActivityLikeBinding::infl
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        userDB = Firebase.database.reference.child(FirebaseDBKey.USERS)
+        userDB = Firebase.database.reference.child(FirebaseDBKey.DB_USERS)
         val currentUserDB = userDB.child(getCurrentUserId())
         currentUserDB.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
