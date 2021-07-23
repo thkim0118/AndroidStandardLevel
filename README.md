@@ -79,3 +79,7 @@
   - Facebook
 - Firebase Realtime Database
 
+### Transaction(Used transaction)
+- Firebase Realtime Database
+- Firebase Storage
+
