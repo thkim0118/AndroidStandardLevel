@@ -1,7 +1,7 @@
 package com.terry.remote.api
 
-import com.terry.remote.model.BestSellerDTO
-import com.terry.remote.model.SearchBookDTO
+import com.terry.remote.model.book.BestSellerDTO
+import com.terry.remote.model.book.SearchBookDTO
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

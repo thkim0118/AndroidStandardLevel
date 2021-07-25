@@ -3,6 +3,9 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.terry.airbnb">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <dist:module
         dist:instant="false"
         dist:title="@string/title_airbnb">
@@ -14,7 +17,12 @@
     </dist:module>
 
     <application>
-        <activity android:name=".AirbnbMainActivity">
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="@string/naver_client_id" />
+
+        <activity android:name=".HouseMainActivity">
 
         </activity>
     </application>

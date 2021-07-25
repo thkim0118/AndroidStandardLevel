@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.terry.books.databinding.ItemBookBinding
-import com.terry.remote.model.Book
+import com.terry.remote.model.book.Book
 
 /*
  * Created by Taehyung Kim on 2021-07-17

@@ -1,8 +1,8 @@
 package com.terry.repository.source.books.remote
 
 import com.terry.remote.api.BookService
-import com.terry.remote.model.BestSellerDTO
-import com.terry.remote.model.SearchBookDTO
+import com.terry.remote.model.book.BestSellerDTO
+import com.terry.remote.model.book.SearchBookDTO
 import retrofit2.Response
 import javax.inject.Inject
 

@@ -65,6 +65,8 @@ object Version {
 
     // Naver map sdk
     const val NAVER_MAP_VERSION = "3.12.0"
+
+    const val PLAY_SERVICES_LOCATION_VERSION = "18.0.0"
 }
 
 object TestVersion {

@@ -1,4 +1,4 @@
-package com.terry.remote.model
+package com.terry.remote.model.book
 
 import com.google.gson.annotations.SerializedName
 

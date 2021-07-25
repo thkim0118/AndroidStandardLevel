@@ -1,5 +1,6 @@
 package com.terry.common.di
 
+import com.terry.repository.usecase.airbnb.GetHouseListUseCase
 import com.terry.repository.usecase.books.*
 import com.terry.repository.usecase.books.remote.GetBestSellerBooksUseCase
 import com.terry.repository.usecase.books.remote.GetBooksByNameUseCase
@@ -37,4 +38,5 @@ interface UseCaseDependencies {
 
     fun getBestSellerBooks(): GetBestSellerBooksUseCase
 
+    fun getHouseListUseCase(): GetHouseListUseCase
 }

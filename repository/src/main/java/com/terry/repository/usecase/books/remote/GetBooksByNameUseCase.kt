@@ -1,6 +1,6 @@
 package com.terry.repository.usecase.books.remote
 
-import com.terry.remote.model.SearchBookDTO
+import com.terry.remote.model.book.SearchBookDTO
 import com.terry.repository.repo.books.remote.BookServiceRepository
 import retrofit2.Response
 import javax.inject.Inject

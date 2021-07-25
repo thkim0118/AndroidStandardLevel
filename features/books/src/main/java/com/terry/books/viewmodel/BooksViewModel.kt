@@ -3,7 +3,7 @@ package com.terry.books.viewmodel
 import androidx.lifecycle.*
 import com.terry.common.LogT
 import com.terry.local.model.BookSearchHistory
-import com.terry.remote.model.Book
+import com.terry.remote.model.book.Book
 import com.terry.repository.usecase.books.DeleteBookSearchHistoryUseCase
 import com.terry.repository.usecase.books.GetAllSearchHistoryUseCase
 import com.terry.repository.usecase.books.InsertBookSearchHistoryUseCase

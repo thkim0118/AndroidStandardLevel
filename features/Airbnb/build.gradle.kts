@@ -1,6 +1,8 @@
 plugins {
     id(Plugins.ANDROID_DYNAMIC_FEATURE_PLUGIN)
     id(Plugins.KOTLIN_ANDROID_PLUGIN)
+    id(Plugins.KOTLIN_KAPT_PLUGIN)
+    id(Plugins.DAGGER_HILT_PLUGIN)
 }
 
 android {
@@ -44,4 +46,14 @@ dependencies {
     implementation(Deps.GLIDE)
 
     implementation(Deps.NAVER_MAP)
+    implementation(Deps.PLAY_SERVICES_LOCATION)
+
+    // Dagger Hilt
+    implementation(Deps.DAGGER_HILT_ANDROID)
+    kapt(Deps.DAGGER_HILT_COMPILER)
+
+    implementation(Deps.LIFECYCLE_VIEWMODEL)
+
+    implementation(Deps.FRAGMENT)
+
 }
