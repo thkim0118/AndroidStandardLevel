@@ -63,7 +63,8 @@ android {
         Modules.DynamicFeature.BOOKS,
         Modules.DynamicFeature.TINDER,
         Modules.DynamicFeature.TRANSACTION,
-        Modules.DynamicFeature.AIRBNB
+        Modules.DynamicFeature.AIRBNB,
+        Modules.DynamicFeature.VIDEO_PLAYER
     )
 }
 
