@@ -83,3 +83,10 @@
 - Firebase Realtime Database
 - Firebase Storage
 
+### Airbnb
+- Mock Retrofit
+- ViewPager2
+- BottomSheet
+- Naver Map api
+- Glide
+  - transform(crop, corner)
