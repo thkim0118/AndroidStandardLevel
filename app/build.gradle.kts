@@ -23,8 +23,10 @@ android {
         val fbAppId = gradleLocalProperties(rootDir).getProperty("facebook.app.id")
         val fbLoginProtocolScheme =
             gradleLocalProperties(rootDir).getProperty("facebook.login.protocol.scheme")
+        val naverClientId = gradleLocalProperties(rootDir).getProperty("naver.client.id")
         resValue("string", "facebook_app_id", fbAppId)
         resValue("string", "fb_login_protocol_scheme", fbLoginProtocolScheme)
+        resValue("string", "naver_client_id", naverClientId)
     }
 
     buildTypes {
@@ -60,7 +62,8 @@ android {
         Modules.DynamicFeature.ALARM,
         Modules.DynamicFeature.BOOKS,
         Modules.DynamicFeature.TINDER,
-        Modules.DynamicFeature.TRANSACTION
+        Modules.DynamicFeature.TRANSACTION,
+        Modules.DynamicFeature.AIRBNB
     )
 }
 
@@ -108,5 +111,8 @@ dependencies {
     implementation(Deps.FACEBOOK_LOGIN)
 
     implementation(Deps.GLIDE)
+
+    implementation(Deps.NAVER_MAP)
+    implementation(Deps.PLAY_SERVICES_LOCATION)
 
 }

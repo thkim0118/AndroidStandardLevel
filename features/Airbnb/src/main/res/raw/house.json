@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "레지던스!!",
+      "price": "45,000원",
+      "lat": 37.57443906283033,
+      "lng": 126.9613346350259,
+      "imgUrl": "https://i.picsum.photos/id/894/200/200.jpg?hmac=h3PvihhxRrUznPuW-OPbq7zxa0On5jLsyYbWwI6nW6w"
+    },
+    {
+      "id": 2,
+      "title": "스터디룸!!",
+      "price": "30,000원",
+      "lat": 37.57365123755597,
+      "lng": 126.96054526734463,
+      "imgUrl": "https://i.picsum.photos/id/0/200/200.jpg?hmac=RZmZI0kb9l_aRWHFyOZUGyc8xsyV30HOJX8a4wuHWkA"
+    },
+    {
+      "id": 3,
+      "title": "고급 레지던스!!",
+      "price": "60,000원",
+      "lat": 37.573489037196396,
+      "lng": 126.96122604474357,
+      "imgUrl": "https://i.picsum.photos/id/802/200/200.jpg?hmac=alfo3M8Ps4XWmFJGIwuzLUqOrwxqkE5_f65vCtk6_Iw"
+    },
+    {
+      "id": 4,
+      "title": "카페 스터디룸!!",
+      "price": "35,000원",
+      "lat": 37.57295781735483,
+      "lng": 126.96309866604416,
+      "imgUrl": "https://i.picsum.photos/id/515/200/200.jpg?hmac=d6WMJkHOOB7pT-6y_yjHKrJdVp3v17ry6bMzGVuyb68"
+    },
+    {
+      "id": 5,
+      "title": "게스트 하우스!!",
+      "price": "25,000원",
+      "lat": 37.57290254501204,
+      "lng": 126.96061494063778,
+      "imgUrl": "https://i.picsum.photos/id/862/200/200.jpg?hmac=rRVo_arAcvYpDsyKWlGq_MPlxjOpW2jIe42jZ8REjZ4"
+    },
+    {
+      "id": 6,
+      "title": "최저가 오피스텔",
+      "price": "40,000원",
+      "lat": 37.57268570696327,
+      "lng": 126.96057202529599,
+      "imgUrl": "https://i.picsum.photos/id/420/200/200.jpg?hmac=7hdmWb4uHh3ulb7_b_NXZ6QZY_mpCdVcwji4oMqP1Eg"
+    }
+  ]
+}

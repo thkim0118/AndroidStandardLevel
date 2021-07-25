@@ -1,6 +1,6 @@
 package com.terry.repository.usecase.books.remote
 
-import com.terry.remote.model.BestSellerDTO
+import com.terry.remote.model.book.BestSellerDTO
 import com.terry.repository.repo.books.remote.BookServiceRepository
 import retrofit2.Response
 import javax.inject.Inject

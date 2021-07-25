@@ -29,7 +29,7 @@ object Version {
     const val APPCOMPAT_VERSION = "1.3.0"
 
     // Material
-    const val MATERIAL_VERSION = "1.3.0"
+    const val MATERIAL_VERSION = "1.4.0"
 
     // Lifecycle
     const val LIFECYCLE = "2.3.0"
@@ -62,6 +62,11 @@ object Version {
 
     // CardStackView
     const val CARD_STACK_VIEW_VERSION = "2.3.4"
+
+    // Naver map sdk
+    const val NAVER_MAP_VERSION = "3.12.0"
+
+    const val PLAY_SERVICES_LOCATION_VERSION = "18.0.0"
 }
 
 object TestVersion {

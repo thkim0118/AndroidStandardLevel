@@ -26,5 +26,6 @@ object Modules {
         const val BOOKS = ":features:books"
         const val TINDER = ":features:Tinder"
         const val TRANSACTION = ":features:Transaction"
+        const val AIRBNB = ":features:Airbnb"
     }
 }

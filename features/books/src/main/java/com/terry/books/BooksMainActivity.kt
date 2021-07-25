@@ -16,7 +16,7 @@ import com.terry.common.base.BaseActivity
 import com.terry.common.di.UseCaseDependencies
 import com.terry.common.util.KeyboardUtil
 import com.terry.local.model.BookSearchHistory
-import com.terry.remote.model.Book
+import com.terry.remote.model.book.Book
 import dagger.hilt.android.EntryPointAccessors
 import javax.inject.Inject
 
