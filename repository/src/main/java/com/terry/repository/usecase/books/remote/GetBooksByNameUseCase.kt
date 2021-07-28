@@ -1,6 +1,6 @@
 package com.terry.repository.usecase.books.remote
 
-import com.terry.remote.model.book.SearchBookDTO
+import com.terry.remote.model.book.SearchBookDto
 import com.terry.repository.repo.books.remote.BookServiceRepository
 import retrofit2.Response
 import javax.inject.Inject
@@ -12,7 +12,7 @@ class GetBooksByNameUseCase @Inject constructor(
     private val bookServiceRepository: BookServiceRepository
 ) {
 
-    suspend operator fun invoke(apiKey: String, keyword: String): Response<SearchBookDTO> {
+    suspend operator fun invoke(apiKey: String, keyword: String): Response<SearchBookDto> {
         return bookServiceRepository.getBooksByName(apiKey, keyword)
     }
 

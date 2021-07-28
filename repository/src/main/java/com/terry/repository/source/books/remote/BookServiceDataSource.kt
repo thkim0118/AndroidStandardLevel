@@ -1,7 +1,7 @@
 package com.terry.repository.source.books.remote
 
-import com.terry.remote.model.book.BestSellerDTO
-import com.terry.remote.model.book.SearchBookDTO
+import com.terry.remote.model.book.BestSellerDto
+import com.terry.remote.model.book.SearchBookDto
 import retrofit2.Response
 
 /*
@@ -9,8 +9,8 @@ import retrofit2.Response
  */
 interface BookServiceDataSource {
 
-    suspend fun getBooksByName(apiKey: String, keyword: String): Response<SearchBookDTO>
+    suspend fun getBooksByName(apiKey: String, keyword: String): Response<SearchBookDto>
 
-    suspend fun getBestSellerBooks(apiKey: String): Response<BestSellerDTO>
+    suspend fun getBestSellerBooks(apiKey: String): Response<BestSellerDto>
 
 }

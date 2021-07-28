@@ -12,3 +12,7 @@ annotation class BookRetrofit
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class HouseRetrofit
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class VideoRetrofit

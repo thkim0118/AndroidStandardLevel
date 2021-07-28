@@ -1,6 +1,6 @@
 package com.terry.repository.repo.airbnb
 
-import com.terry.remote.model.airbnb.HouseDTO
+import com.terry.remote.model.airbnb.HouseDto
 import com.terry.repository.source.airbnb.HouseDataSource
 import retrofit2.Response
 import javax.inject.Inject
@@ -12,7 +12,7 @@ class HouseRepositoryImpl @Inject constructor(
     private val houseDataSource: HouseDataSource
 ) : HouseRepository {
 
-    override suspend fun getHouseList(): Response<HouseDTO> {
+    override suspend fun getHouseList(): Response<HouseDto> {
         return houseDataSource.getHouseList()
     }
 }
