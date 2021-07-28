@@ -90,3 +90,8 @@
 - Naver Map api
 - Glide
   - transform(crop, corner)
+
+### VideoPlayer
+- ExoPlayer
+- MotionLayout
+- Mocky Retrofit
