@@ -27,6 +27,7 @@
             <option value="$PROJECT_DIR$/features/RemoteConfig" />
             <option value="$PROJECT_DIR$/features/Tinder" />
             <option value="$PROJECT_DIR$/features/Transaction" />
+            <option value="$PROJECT_DIR$/features/VideoPlayer" />
             <option value="$PROJECT_DIR$/features/WebViewer" />
             <option value="$PROJECT_DIR$/features/books" />
             <option value="$PROJECT_DIR$/local" />

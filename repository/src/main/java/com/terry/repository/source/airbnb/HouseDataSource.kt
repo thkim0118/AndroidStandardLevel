@@ -1,6 +1,6 @@
 package com.terry.repository.source.airbnb
 
-import com.terry.remote.model.airbnb.HouseDTO
+import com.terry.remote.model.airbnb.HouseDto
 import retrofit2.Response
 
 /*
@@ -8,6 +8,6 @@ import retrofit2.Response
  */
 interface HouseDataSource {
 
-    suspend fun getHouseList(): Response<HouseDTO>
+    suspend fun getHouseList(): Response<HouseDto>
 
 }

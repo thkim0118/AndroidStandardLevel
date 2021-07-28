@@ -27,5 +27,6 @@ object Modules {
         const val TINDER = ":features:Tinder"
         const val TRANSACTION = ":features:Transaction"
         const val AIRBNB = ":features:Airbnb"
+        const val VIDEO_PLAYER = ":features:VideoPlayer"
     }
 }

@@ -81,6 +81,9 @@ object Deps {
 
     const val PLAY_SERVICES_LOCATION =
         "com.google.android.gms:play-services-location:${Version.PLAY_SERVICES_LOCATION_VERSION}"
+
+    const val EXO_PLAYER =
+        "com.google.android.exoplayer:exoplayer:${Version.EXO_PLAYER_VERSION}"
 }
 
 object TestLibs {

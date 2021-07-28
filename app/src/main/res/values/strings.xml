@@ -10,4 +10,5 @@
     <string name="title_tinder">Tinder</string>
     <string name="title_transaction">Transaction</string>
     <string name="title_airbnb">Airbnb</string>
+    <string name="title_videoplayer">VideoPlayer</string>
 </resources>

@@ -2,6 +2,7 @@ package com.terry.remote.di
 
 import com.terry.remote.api.BookService
 import com.terry.remote.api.HouseService
+import com.terry.remote.api.VideoService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +19,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
     private const val INTER_PARK_BASE_URL = "https://book.interpark.com"
-    private const val HOUSE_BASE_URL = "https://run.mocky.io"
+    private const val MOCKY_BASE_URL = "https://run.mocky.io"
 
     @BookRetrofit
     @Singleton
@@ -32,7 +33,15 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideHouseRetrofit(): Retrofit = Retrofit.Builder()
-        .baseUrl(HOUSE_BASE_URL)
+        .baseUrl(MOCKY_BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    @VideoRetrofit
+    @Singleton
+    @Provides
+    fun provideVideoRetrofit(): Retrofit = Retrofit.Builder()
+        .baseUrl(MOCKY_BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
@@ -45,4 +54,9 @@ object NetworkModule {
     @Provides
     fun provideHouseService(@HouseRetrofit retrofit: Retrofit): HouseService =
         retrofit.create(HouseService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideVideoService(@VideoRetrofit retrofit: Retrofit): VideoService =
+        retrofit.create(VideoService::class.java)
 }
