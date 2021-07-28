@@ -28,5 +28,6 @@ object Modules {
         const val TRANSACTION = ":features:Transaction"
         const val AIRBNB = ":features:Airbnb"
         const val VIDEO_PLAYER = ":features:VideoPlayer"
+        const val AUDIO_PLAYER = ":features:AudioPlayer"
     }
 }

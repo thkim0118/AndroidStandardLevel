@@ -64,7 +64,8 @@ android {
         Modules.DynamicFeature.TINDER,
         Modules.DynamicFeature.TRANSACTION,
         Modules.DynamicFeature.AIRBNB,
-        Modules.DynamicFeature.VIDEO_PLAYER
+        Modules.DynamicFeature.VIDEO_PLAYER,
+        Modules.DynamicFeature.AUDIO_PLAYER
     )
 }
 
