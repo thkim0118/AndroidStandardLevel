@@ -22,6 +22,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 //        startActivity("com.terry.tinder.TinderMainActivity")
 //        startActivity("com.terry.transaction.TransactionMainActivity")
 //        startActivity("com.terry.airbnb.HouseMainActivity")
-        startActivity("com.terry.videoplayer.VideoMainActivity")
+//        startActivity("com.terry.videoplayer.VideoMainActivity")
+        startActivity("com.terry.audioplayer.AudioMainActivity")
     }
 }

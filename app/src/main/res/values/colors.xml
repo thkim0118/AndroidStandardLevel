@@ -24,4 +24,11 @@
 
     <color name="orange">#f27f35</color>
 
+    <color name="audio_player_background">#7E57C2</color>
+    <color name="audio_player_white_background">#DFD0FA</color>
+
+    <color name="gray_97">#979797</color>
+    <color name="gray_aa">#AAAAAA</color>
+    <color name="audio_player_seek_bar_background">#D8D8D8</color>
+
 </resources>

@@ -117,4 +117,6 @@ dependencies {
     implementation(Deps.NAVER_MAP)
     implementation(Deps.PLAY_SERVICES_LOCATION)
 
+    implementation(Deps.EXO_PLAYER)
+
 }

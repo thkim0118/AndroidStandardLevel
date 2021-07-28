@@ -14,7 +14,11 @@
     </dist:module>
 
     <application>
-        <activity android:name=".AudioMainActivity"></activity>
+        <activity
+            android:name=".AudioMainActivity"
+            android:theme="@style/Theme.AndroidStandardLevel.AudioPlayer.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>
