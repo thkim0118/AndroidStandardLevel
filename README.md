@@ -95,3 +95,9 @@
 - ExoPlayer
 - MotionLayout
 - Mocky Retrofit
+
+### Music Player
+- ExoPlayer
+- Mocky Retrofit
+- data class
+  - 클래스 내부 다양한 처리 방식(Player 상태 위임)
