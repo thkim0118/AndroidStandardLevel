@@ -64,7 +64,8 @@ android {
         Modules.DynamicFeature.TINDER,
         Modules.DynamicFeature.TRANSACTION,
         Modules.DynamicFeature.AIRBNB,
-        Modules.DynamicFeature.VIDEO_PLAYER
+        Modules.DynamicFeature.VIDEO_PLAYER,
+        Modules.DynamicFeature.MUSIC_PLAYER
     )
 }
 
@@ -115,5 +116,7 @@ dependencies {
 
     implementation(Deps.NAVER_MAP)
     implementation(Deps.PLAY_SERVICES_LOCATION)
+
+    implementation(Deps.EXO_PLAYER)
 
 }

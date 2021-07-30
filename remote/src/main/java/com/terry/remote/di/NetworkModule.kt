@@ -1,5 +1,6 @@
 package com.terry.remote.di
 
+import com.terry.remote.api.MusicService
 import com.terry.remote.api.BookService
 import com.terry.remote.api.HouseService
 import com.terry.remote.api.VideoService
@@ -29,18 +30,10 @@ object NetworkModule {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    @HouseRetrofit
+    @MockRetrofit
     @Singleton
     @Provides
-    fun provideHouseRetrofit(): Retrofit = Retrofit.Builder()
-        .baseUrl(MOCKY_BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-
-    @VideoRetrofit
-    @Singleton
-    @Provides
-    fun provideVideoRetrofit(): Retrofit = Retrofit.Builder()
+    fun provideMockRetrofit(): Retrofit = Retrofit.Builder()
         .baseUrl(MOCKY_BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
@@ -52,11 +45,16 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideHouseService(@HouseRetrofit retrofit: Retrofit): HouseService =
+    fun provideHouseService(@MockRetrofit retrofit: Retrofit): HouseService =
         retrofit.create(HouseService::class.java)
 
     @Singleton
     @Provides
-    fun provideVideoService(@VideoRetrofit retrofit: Retrofit): VideoService =
+    fun provideVideoService(@MockRetrofit retrofit: Retrofit): VideoService =
         retrofit.create(VideoService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideAudioService(@MockRetrofit retrofit: Retrofit): MusicService =
+        retrofit.create(MusicService::class.java)
 }

@@ -7,6 +7,7 @@ import com.terry.repository.usecase.books.remote.GetBooksByNameUseCase
 import com.terry.repository.usecase.calculator.DeleteAllHistoryUseCase
 import com.terry.repository.usecase.calculator.GetAllHistoryUseCase
 import com.terry.repository.usecase.calculator.InsertHistoryUseCase
+import com.terry.repository.usecase.musicplayer.GetMusicListUseCase
 import com.terry.repository.usecase.videoplayer.GetVideoListUseCase
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -42,4 +43,6 @@ interface UseCaseDependencies {
     fun getHouseListUseCase(): GetHouseListUseCase
 
     fun getVideoListUseCase(): GetVideoListUseCase
+
+    fun getMusicListUseCase(): GetMusicListUseCase
 }

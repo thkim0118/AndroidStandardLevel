@@ -4,9 +4,10 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="testRunner" value="PLATFORM" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -22,6 +23,7 @@
             <option value="$PROJECT_DIR$/features/Diary" />
             <option value="$PROJECT_DIR$/features/Frame" />
             <option value="$PROJECT_DIR$/features/Lotto" />
+            <option value="$PROJECT_DIR$/features/MusicPlayer" />
             <option value="$PROJECT_DIR$/features/Notification" />
             <option value="$PROJECT_DIR$/features/Pomodoro" />
             <option value="$PROJECT_DIR$/features/RemoteConfig" />

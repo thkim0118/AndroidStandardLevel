@@ -26,7 +26,7 @@ object Version {
     const val FRAGMENT_KTX_VERSION = "1.1.0-rc01"
 
     // Appcompat
-    const val APPCOMPAT_VERSION = "1.3.0"
+    const val APPCOMPAT_VERSION = "1.3.1"
 
     // Material
     const val MATERIAL_VERSION = "1.4.0"
@@ -44,7 +44,7 @@ object Version {
     // ROOM
     const val ROOM_VERSION = "2.2.6"
 
-    const val FRAGMENT_VERSION = "1.3.5"
+    const val FRAGMENT_VERSION = "1.3.6"
 
     // Coroutines
     const val COROUTINES_VERSION = "1.3.5"

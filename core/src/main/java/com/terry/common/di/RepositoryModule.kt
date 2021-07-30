@@ -12,6 +12,8 @@ import com.terry.repository.repo.books.remote.BookServiceRepository
 import com.terry.repository.repo.books.remote.BookServiceRepositoryImpl
 import com.terry.repository.repo.calculator.HistoryRepository
 import com.terry.repository.repo.calculator.HistoryRepositoryImpl
+import com.terry.repository.repo.musicplayer.MusicRepository
+import com.terry.repository.repo.musicplayer.MusicRepositoryImpl
 import com.terry.repository.repo.videoplayer.VideoRepository
 import com.terry.repository.repo.videoplayer.VideoRepositoryImpl
 import com.terry.repository.source.airbnb.HouseDataSource
@@ -24,6 +26,8 @@ import com.terry.repository.source.books.remote.BookServiceDataSource
 import com.terry.repository.source.books.remote.BookServiceDataSourceImpl
 import com.terry.repository.source.calculator.HistoryDataSource
 import com.terry.repository.source.calculator.HistoryDataSourceImpl
+import com.terry.repository.source.musicplayer.MusicDataSource
+import com.terry.repository.source.musicplayer.MusicDataSourceImpl
 import com.terry.repository.source.videoplayer.VideoDataSource
 import com.terry.repository.source.videoplayer.VideoDataSourceImpl
 import dagger.Binds
@@ -86,5 +90,13 @@ interface RepositoryModule {
     @Singleton
     @Binds
     fun bindVideoServiceRepository(repository: VideoRepositoryImpl): VideoRepository
+
+    @Singleton
+    @Binds
+    fun bindMusicDataSource(dataSource: MusicDataSourceImpl): MusicDataSource
+
+    @Singleton
+    @Binds
+    fun bindMusicServiceRepository(repository: MusicRepositoryImpl): MusicRepository
 
 }
