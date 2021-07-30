@@ -65,7 +65,7 @@ android {
         Modules.DynamicFeature.TRANSACTION,
         Modules.DynamicFeature.AIRBNB,
         Modules.DynamicFeature.VIDEO_PLAYER,
-        Modules.DynamicFeature.AUDIO_PLAYER
+        Modules.DynamicFeature.MUSIC_PLAYER
     )
 }
 
