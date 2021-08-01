@@ -9,6 +9,8 @@ object Plugins {
     const val DETEKT = "io.gitlab.arturbosch.detekt"
 
     const val CLASSPATH_GRADLE = "com.android.tools.build:gradle:${PluginVersion.GRADLE_VERSION}"
+    const val CLASSPATH_KOTLIN =
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:${PluginVersion.KOTLIN_VERSION}"
     const val CLASSPATH_KTLINT =
         "org.jlleitschuh.gradle:ktlint-gradle:${PluginVersion.KTLINT_VERSION}"
     const val CLASSPATH_DAGGER_HILT =

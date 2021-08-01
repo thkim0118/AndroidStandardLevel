@@ -35,7 +35,7 @@ object Version {
     const val LIFECYCLE = "2.3.0"
 
     // ConstraintLayout
-    const val CONSTRAINT_LAYOUT_VERSION = "2.0.4"
+    const val CONSTRAINT_LAYOUT_VERSION = "2.1.0"
 
     // Dagger
     const val DAGGER_HILT_VERSION = "2.37"

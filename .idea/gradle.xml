@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/features/Calculator" />
             <option value="$PROJECT_DIR$/features/Diary" />
             <option value="$PROJECT_DIR$/features/Frame" />
+            <option value="$PROJECT_DIR$/features/Location" />
             <option value="$PROJECT_DIR$/features/Lotto" />
             <option value="$PROJECT_DIR$/features/MusicPlayer" />
             <option value="$PROJECT_DIR$/features/Notification" />
