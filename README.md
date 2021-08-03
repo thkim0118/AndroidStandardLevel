@@ -1,4 +1,5 @@
 # AndroidStandardLevel
+- 안드로이드 앱 개발의 기본기를 스터디한 기록
 ## Tech Stack
 * Room
 * Retrofit
@@ -6,9 +7,11 @@
 * MVVM
 * LiveData
 * Coroutine
-* Repository Pattern(Domain Layer)
-* Use Case pattern(Domain Layer)
+* Clean Architecture
+  * Repository Pattern(Domain Layer)
+  * Use Case pattern(Domain Layer)
 * Multi Module
+* Kotlin DSL
 
 ## Module
 * features
