@@ -1,5 +1,14 @@
 # AndroidStandardLevel
 - 안드로이드 앱 개발의 기본기를 스터디한 기록
+
+* TODO
+  * Feature 이동 UI(MainActivity)
+    * Carousel with MotionLayout
+  * 각 기능 리팩토링
+  * 세부 기능 추가 및 고도화
+  * Migrate to Jetpack Compose UI
+  * UI 고도화
+
 ## Tech Stack
 * Room
 * Retrofit
@@ -21,7 +30,7 @@
 * local
   * Internal Database(Room), Model, Dao, Local DI(Database, Dao)
 * remote
-  * Remote Rest API(Retrofit), Model, DTO, API Interface, Remote DI(Retrofit, Api class)
+  * Remote Rest API(Retrofit), Model, Dto, API Interface, Remote DI(Retrofit, Api class)
 * repository
   * Data Source, Repository, Use Case
 
@@ -44,6 +53,8 @@
 - Room
   - Migration
   - Insert, Query
+- MVVM
+- Hilt DI
 
 ### Notification
 - Firebase Messaging
@@ -88,6 +99,8 @@
 
 ### Airbnb
 - Mock Retrofit
+- MVVM
+- Hilt DI
 - ViewPager2
 - BottomSheet
 - Naver Map api
@@ -98,9 +111,19 @@
 - ExoPlayer
 - MotionLayout
 - Mocky Retrofit
+- MVVM
+- Hilt DI
 
 ### Music Player
 - ExoPlayer
 - Mocky Retrofit
 - data class
   - 클래스 내부 다양한 처리 방식(Player 상태 관리 위임)
+- MVVM
+- Hilt DI
+
+### Location
+- Google Map
+- Retrofit
+- MVVM
+- Hilt DI
