@@ -12,6 +12,8 @@ import com.terry.repository.repo.books.remote.BookServiceRepository
 import com.terry.repository.repo.books.remote.BookServiceRepositoryImpl
 import com.terry.repository.repo.calculator.HistoryRepository
 import com.terry.repository.repo.calculator.HistoryRepositoryImpl
+import com.terry.repository.repo.location.LocationRepository
+import com.terry.repository.repo.location.LocationRepositoryImpl
 import com.terry.repository.repo.musicplayer.MusicRepository
 import com.terry.repository.repo.musicplayer.MusicRepositoryImpl
 import com.terry.repository.repo.videoplayer.VideoRepository
@@ -98,5 +100,9 @@ interface RepositoryModule {
     @Singleton
     @Binds
     fun bindMusicServiceRepository(repository: MusicRepositoryImpl): MusicRepository
+
+    @Singleton
+    @Binds
+    fun bindLocationServiceRepository(repository: LocationRepositoryImpl): LocationRepository
 
 }

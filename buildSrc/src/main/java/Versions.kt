@@ -55,6 +55,8 @@ object Version {
 
     const val RETROFIT_VERSION = "2.9.0"
 
+    const val OK_HTTP_VERSION = "4.9.0"
+
     const val GLIDE_VERSION = "4.12.0"
 
     // Facebook
@@ -67,6 +69,8 @@ object Version {
     const val NAVER_MAP_VERSION = "3.12.0"
 
     const val PLAY_SERVICES_LOCATION_VERSION = "18.0.0"
+
+    const val PLAY_SERVICES_MAPS_VERSION = "17.0.1"
 
     const val EXO_PLAYER_VERSION = "2.14.2"
 }

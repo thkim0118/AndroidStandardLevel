@@ -12,3 +12,11 @@ annotation class BookRetrofit
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class MockRetrofit
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class LocationRetrofit
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class LocationOkHttpClient

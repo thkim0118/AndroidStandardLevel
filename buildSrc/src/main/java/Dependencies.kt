@@ -67,6 +67,12 @@ object Deps {
     const val RETROFIT_GSON =
         "com.squareup.retrofit2:converter-gson:${Version.RETROFIT_VERSION}"
 
+    const val OK_HTTP =
+        "com.squareup.okhttp3:okhttp:${Version.OK_HTTP_VERSION}"
+
+    const val OK_HTTP_LOGGING =
+        "com.squareup.okhttp3:logging-interceptor:${Version.OK_HTTP_VERSION}"
+
     const val GLIDE =
         "com.github.bumptech.glide:glide:${Version.GLIDE_VERSION}"
 
@@ -81,6 +87,9 @@ object Deps {
 
     const val PLAY_SERVICES_LOCATION =
         "com.google.android.gms:play-services-location:${Version.PLAY_SERVICES_LOCATION_VERSION}"
+
+    const val PLAY_SERVICES_MAPS =
+        "com.google.android.gms:play-services-maps:${Version.PLAY_SERVICES_MAPS_VERSION}"
 
     const val EXO_PLAYER =
         "com.google.android.exoplayer:exoplayer:${Version.EXO_PLAYER_VERSION}"

@@ -16,7 +16,9 @@ android {
         targetSdkVersion(AndroidVersion.TARGET_SDK_VERSION)
 
         val key = gradleLocalProperties(rootDir).getProperty("interpark.api.key")
+        val tmapProjectId = gradleLocalProperties(rootDir).getProperty("tmap.project.id")
         buildConfigField("String", "interpark_key", key)
+        buildConfigField("String", "tmap_project_id", tmapProjectId)
     }
 
     buildTypes {
@@ -47,4 +49,6 @@ dependencies {
 
     implementation(Deps.RETROFIT)
     implementation(Deps.RETROFIT_GSON)
+    implementation(Deps.OK_HTTP)
+    implementation(Deps.OK_HTTP_LOGGING)
 }

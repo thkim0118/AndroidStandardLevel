@@ -3,6 +3,7 @@ plugins {
     id(Plugins.KOTLIN_ANDROID_PLUGIN)
     id(Plugins.KOTLIN_KAPT_PLUGIN)
     id(Plugins.DAGGER_HILT_PLUGIN)
+    id(Plugins.KOTLIN_PARCELIZE)
 }
 
 android {
@@ -43,6 +44,8 @@ dependencies {
 
     implementation(Deps.RETROFIT)
     implementation(Deps.RETROFIT_GSON)
+    implementation(Deps.OK_HTTP)
+    implementation(Deps.OK_HTTP_LOGGING)
 
     // Dagger Hilt
     implementation(Deps.DAGGER_HILT_ANDROID)
@@ -51,4 +54,7 @@ dependencies {
     implementation(Deps.LIFECYCLE_VIEWMODEL)
 
     implementation(Deps.FRAGMENT)
+
+    implementation(Deps.PLAY_SERVICES_LOCATION)
+    implementation(Deps.PLAY_SERVICES_MAPS)
 }

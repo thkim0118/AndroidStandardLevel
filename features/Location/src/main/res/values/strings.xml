@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="input_search_keyword">검색어를 입력해주세요</string>
+    <string name="action_search">검색</string>
+    <string name="empty_result_text">검색 결과</string>
+</resources>
