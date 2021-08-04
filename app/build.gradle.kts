@@ -24,9 +24,11 @@ android {
         val fbLoginProtocolScheme =
             gradleLocalProperties(rootDir).getProperty("facebook.login.protocol.scheme")
         val naverClientId = gradleLocalProperties(rootDir).getProperty("naver.client.id")
+        val googleApiKey = gradleLocalProperties(rootDir).getProperty("google.api.key")
         resValue("string", "facebook_app_id", fbAppId)
         resValue("string", "fb_login_protocol_scheme", fbLoginProtocolScheme)
         resValue("string", "naver_client_id", naverClientId)
+        resValue("string", "google_key", googleApiKey)
     }
 
     buildTypes {
@@ -65,7 +67,8 @@ android {
         Modules.DynamicFeature.TRANSACTION,
         Modules.DynamicFeature.AIRBNB,
         Modules.DynamicFeature.VIDEO_PLAYER,
-        Modules.DynamicFeature.MUSIC_PLAYER
+        Modules.DynamicFeature.MUSIC_PLAYER,
+        Modules.DynamicFeature.LOCATION
     )
 }
 
@@ -103,6 +106,8 @@ dependencies {
 
     implementation(Deps.RETROFIT)
     implementation(Deps.RETROFIT_GSON)
+    implementation(Deps.OK_HTTP)
+    implementation(Deps.OK_HTTP_LOGGING)
 
     implementation(Deps.FRAGMENT)
 

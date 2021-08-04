@@ -1,15 +1,16 @@
 package com.terry.remote.di
 
-import com.terry.remote.api.MusicService
-import com.terry.remote.api.BookService
-import com.terry.remote.api.HouseService
-import com.terry.remote.api.VideoService
+import com.terry.remote.BuildConfig
+import com.terry.remote.api.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 /*
@@ -21,6 +22,7 @@ object NetworkModule {
 
     private const val INTER_PARK_BASE_URL = "https://book.interpark.com"
     private const val MOCKY_BASE_URL = "https://run.mocky.io"
+    private const val TMAP_BASE_URL = "https://apis.openapi.sk.com"
 
     @BookRetrofit
     @Singleton
@@ -37,6 +39,16 @@ object NetworkModule {
         .baseUrl(MOCKY_BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    @LocationRetrofit
+    @Singleton
+    @Provides
+    fun provideTmapRetrofit(@LocationOkHttpClient tmapHttpClient: OkHttpClient): Retrofit =
+        Retrofit.Builder()
+            .baseUrl(TMAP_BASE_URL)
+            .client(tmapHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
     @Singleton
     @Provides
@@ -57,4 +69,31 @@ object NetworkModule {
     @Provides
     fun provideAudioService(@MockRetrofit retrofit: Retrofit): MusicService =
         retrofit.create(MusicService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideLocationService(@LocationRetrofit retrofit: Retrofit): LocationService =
+        retrofit.create(LocationService::class.java)
+
+    @LocationOkHttpClient
+    @Singleton
+    @Provides
+    fun provideTmapOkHttpClient(): OkHttpClient =
+        OkHttpClient.Builder()
+            .run {
+                addInterceptor { chain ->
+                    chain.proceed(
+                        chain.request()
+                            .newBuilder()
+                            .header("appKey", BuildConfig.tmap_project_id)
+                            .build()
+                    )
+                }
+                addInterceptor(HttpLoggingInterceptor().apply {
+                    level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
+                    else HttpLoggingInterceptor.Level.NONE
+                })
+                connectTimeout(5, TimeUnit.SECONDS)
+                build()
+            }
 }

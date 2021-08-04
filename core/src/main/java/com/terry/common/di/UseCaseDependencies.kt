@@ -7,6 +7,8 @@ import com.terry.repository.usecase.books.remote.GetBooksByNameUseCase
 import com.terry.repository.usecase.calculator.DeleteAllHistoryUseCase
 import com.terry.repository.usecase.calculator.GetAllHistoryUseCase
 import com.terry.repository.usecase.calculator.InsertHistoryUseCase
+import com.terry.repository.usecase.location.GetReverseGeoCodeUseCase
+import com.terry.repository.usecase.location.GetSearchLocationUseCase
 import com.terry.repository.usecase.musicplayer.GetMusicListUseCase
 import com.terry.repository.usecase.videoplayer.GetVideoListUseCase
 import dagger.hilt.EntryPoint
@@ -45,4 +47,8 @@ interface UseCaseDependencies {
     fun getVideoListUseCase(): GetVideoListUseCase
 
     fun getMusicListUseCase(): GetMusicListUseCase
+
+    fun getSearchLocationUseCase(): GetSearchLocationUseCase
+
+    fun getReverseGeoCodeUseCase(): GetReverseGeoCodeUseCase
 }

@@ -12,4 +12,5 @@
     <string name="title_airbnb">Airbnb</string>
     <string name="title_videoplayer">VideoPlayer</string>
     <string name="title_audioplayer">AudioPlayer</string>
+    <string name="title_location">Location</string>
 </resources>
