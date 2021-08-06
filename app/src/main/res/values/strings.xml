@@ -13,4 +13,5 @@
     <string name="title_videoplayer">VideoPlayer</string>
     <string name="title_audioplayer">AudioPlayer</string>
     <string name="title_location">Location</string>
+    <string name="title_motionintro">MotionIntro</string>
 </resources>

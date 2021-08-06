@@ -6,9 +6,11 @@
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Location/src/main/res/layout/activity_location_main.xml" value="0.18" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Location/src/main/res/layout/activity_map.xml" value="0.18693009118541035" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Location/src/main/res/layout/item_search_result.xml" value="0.45740740740740743" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MotionIntro/src/main/res/layout/activity_motion_intro_main.xml" value="0.1638888888888889" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MusicPlayer/src/main/res/layout/activity_audio_main.xml" value="0.49094202898550726" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MusicPlayer/src/main/res/layout/fragment_player.xml" value="0.18795289855072464" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MusicPlayer/src/main/res/layout/item_music.xml" value="0.1" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/VideoPlayer/src/main/res/layout/fragment_player.xml" value="0.1" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/VideoPlayer/src/main/res/layout/item_video.xml" value="0.18667679837892603" />
       </map>
     </option>
