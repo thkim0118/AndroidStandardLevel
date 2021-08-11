@@ -31,4 +31,5 @@
     <color name="gray_aa">#AAAAAA</color>
     <color name="audio_player_seek_bar_background">#D8D8D8</color>
 
+    <color name="red">#BD0000</color>
 </resources>
