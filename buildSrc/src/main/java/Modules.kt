@@ -30,5 +30,6 @@ object Modules {
         const val VIDEO_PLAYER = ":features:VideoPlayer"
         const val MUSIC_PLAYER = ":features:MusicPlayer"
         const val LOCATION = ":features:Location"
+        const val ARCHITECTURE = ":features:Architecture"
     }
 }
