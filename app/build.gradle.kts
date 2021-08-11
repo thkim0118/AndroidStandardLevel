@@ -68,7 +68,8 @@ android {
         Modules.DynamicFeature.AIRBNB,
         Modules.DynamicFeature.VIDEO_PLAYER,
         Modules.DynamicFeature.MUSIC_PLAYER,
-        Modules.DynamicFeature.LOCATION
+        Modules.DynamicFeature.LOCATION,
+        Modules.DynamicFeature.WEEKLY_STUDY
     )
 }
 
