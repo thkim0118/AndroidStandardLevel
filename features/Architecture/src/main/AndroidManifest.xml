@@ -9,6 +9,22 @@
         <dist:delivery>
             <dist:on-demand />
         </dist:delivery>
+
         <dist:fusing dist:include="true" />
     </dist:module>
+
+    <application>
+        <activity
+            android:name=".ArchitectureMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".mvp.MvpMainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AndroidStandardLevel.Architecture.NoActionBar" />
+        <activity
+            android:name=".mvc.MvcMainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AndroidStandardLevel.Architecture.NoActionBar" />
+    </application>
+
 </manifest>
