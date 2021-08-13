@@ -1,24 +1,21 @@
 package com.terry.architecture.mvc.model
 
-import com.terry.architecture.mvc.controller.MainController
-
 /*
  * Created by Taehyung Kim on 2021-08-12
  */
-class ResultModel(
-    private val mainController: MainController
-) {
+class ResultModel {
     private val resultList = arrayListOf<String>()
+
+    var saveSuccess: ((Boolean) -> Unit)? = null
 
     fun saveResultData(first: String, second: String) {
         Thread {
+            val result = (first.toInt() + second.toInt()).toString()
             Thread.sleep(800) // Mock network delay
 
-            val isSuccess = resultList.add((first.toInt() + second.toInt()).toString() + "\n")
+            val isSuccess = resultList.add(result + "\n")
 
-            if (isSuccess) {
-                mainController.invokeSuccessResult()
-            }
+            saveSuccess?.invoke(isSuccess)
         }.start()
     }
 

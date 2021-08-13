@@ -15,8 +15,12 @@ import com.terry.architecture.mvc.model.ResultModel
 
 class MvcMainActivity : AppCompatActivity() {
 
-    private lateinit var mainController: MainController
-    private lateinit var resultModel: ResultModel
+    private val resultModel = ResultModel()
+    private val mainController: MainController by lazy {
+        MainController().apply {
+            initModel(resultModel)
+        }
+    }
 
     private val makeResultButton by lazy {
         findViewById<Button>(R.id.makeResultButton)
@@ -30,7 +34,6 @@ class MvcMainActivity : AppCompatActivity() {
     private val resultTextView by lazy {
         findViewById<TextView>(R.id.resultTextView)
     }
-
     private val progressBar by lazy {
         findViewById<ProgressBar>(R.id.progressBar)
     }
@@ -39,45 +42,42 @@ class MvcMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_main)
 
-        mainController = MainController()
-        resultModel = ResultModel(mainController)
-
-        with(mainController) {
-            initView(this@MvcMainActivity)
-            initModel(resultModel)
-        }
-
         bindViews()
     }
 
-    fun showResult() {
-        Handler(Looper.getMainLooper()).post {
-            showResultData()
+    private fun bindViews() {
+        makeResultButton.setOnClickListener {
+            showProgress()
+
+            // action 에 대한 처리를 Controller 내부에서 처리
+            mainController.saveResult(
+                first = firstEditText.text.toString(),
+                second = secondEditText.text.toString()
+            ) { isSuccess ->
+                if (isSuccess) {
+                    showResultData()
+                }
+
+                hideProgress()
+            }
         }
     }
 
-    fun showProgress() {
+    private fun showProgress() {
         Handler(Looper.getMainLooper()).post {
             progressBar.isVisible = true
         }
     }
 
-    fun hideProgress() {
+    private fun hideProgress() {
         Handler(Looper.getMainLooper()).post {
             progressBar.isVisible = false
         }
     }
 
-    private fun bindViews() {
-        makeResultButton.setOnClickListener {
-            mainController.saveResult(
-                first = firstEditText.text.toString(),
-                second = secondEditText.text.toString()
-            )
-        }
-    }
-
     private fun showResultData() {
-        resultTextView.text = resultModel.getTotalResult()
+        Handler(Looper.getMainLooper()).post {
+            resultTextView.text = resultModel.getTotalResult()
+        }
     }
 }
