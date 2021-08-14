@@ -40,15 +40,17 @@ class MvcMainActivity : AppCompatActivity() {
     }
 
     private fun bindViews() {
+        // User Action
         makeResultButton.setOnClickListener {
             showProgress()
 
-            // action 에 대한 처리 진행
+            // Controller : action 에 대한 처리 진행(Update UI)
             resultModel.saveResultData(
                 first = firstEditText.text.toString(),
                 second = secondEditText.text.toString()
             )
 
+            // Update UI
             resultModel.saveSuccess = { isSuccess ->
                 if (isSuccess) {
                     showResultData()
@@ -73,6 +75,7 @@ class MvcMainActivity : AppCompatActivity() {
 
     private fun showResultData() {
         Handler(Looper.getMainLooper()).post {
+            // Model Changed
             resultTextView.text = resultModel.getTotalResult()
         }
     }

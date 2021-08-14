@@ -15,6 +15,7 @@ class MvcModel {
 
             val isSuccess = resultList.add(result + "\n")
 
+            // Alert Model Changed
             saveSuccess?.invoke(isSuccess)
         }.start()
     }

@@ -5,15 +5,29 @@ import com.terry.architecture.mvp.model.MvpModel
 /*
  * Created by Taehyung Kim on 2021-08-14
  */
-class MainPresenter {
+class MainPresenter(
+    private val view: Contract.View
+) : Contract.Presenter {
 
-    private lateinit var mvpModel: MvpModel
-
-    fun initModel(mvpModel: MvpModel) {
-        this.mvpModel = mvpModel
+    private val mvpModel: MvpModel by lazy {
+        MvpModel()
     }
 
-    fun saveResult(first: String, second: String) {
+    override fun saveResult(first: String, second: String) {
+        Thread {
+            view.showProgress()
 
+            mvpModel.saveResultData(first, second) { isSuccess, resultData ->
+                view.hideProgress()
+
+                if (isSuccess) {
+                    view.showResultData(getAllResult(resultData))
+                }
+            }
+        }.start()
     }
+
+    private fun getAllResult(resultList: ArrayList<String>) =
+        resultList.reduce { total, s -> total + s }
+
 }
