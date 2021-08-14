@@ -10,17 +10,11 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.terry.architecture.R
-import com.terry.architecture.mvc.controller.MainController
-import com.terry.architecture.mvc.model.ResultModel
+import com.terry.architecture.mvc.model.MvcModel
 
 class MvcMainActivity : AppCompatActivity() {
 
-    private val resultModel = ResultModel()
-    private val mainController: MainController by lazy {
-        MainController().apply {
-            initModel(resultModel)
-        }
-    }
+    private val resultModel = MvcModel()
 
     private val makeResultButton by lazy {
         findViewById<Button>(R.id.makeResultButton)
@@ -49,11 +43,13 @@ class MvcMainActivity : AppCompatActivity() {
         makeResultButton.setOnClickListener {
             showProgress()
 
-            // action 에 대한 처리를 Controller 내부에서 처리
-            mainController.saveResult(
+            // action 에 대한 처리 진행
+            resultModel.saveResultData(
                 first = firstEditText.text.toString(),
                 second = secondEditText.text.toString()
-            ) { isSuccess ->
+            )
+
+            resultModel.saveSuccess = { isSuccess ->
                 if (isSuccess) {
                     showResultData()
                 }

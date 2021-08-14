@@ -3,7 +3,7 @@ package com.terry.architecture.mvc.model
 /*
  * Created by Taehyung Kim on 2021-08-12
  */
-class ResultModel {
+class MvcModel {
     private val resultList = arrayListOf<String>()
 
     var saveSuccess: ((Boolean) -> Unit)? = null
