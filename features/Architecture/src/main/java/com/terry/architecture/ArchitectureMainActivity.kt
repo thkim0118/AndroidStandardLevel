@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.terry.architecture.databinding.ActivityArchitectureMainBinding
 import com.terry.architecture.mvc.MvcMainActivity
 import com.terry.architecture.mvp.MvpMainActivity
+import com.terry.architecture.mvvm.MvvmMainActivity
 import com.terry.common.base.BaseActivity
 
 class ArchitectureMainActivity :
@@ -25,7 +26,7 @@ class ArchitectureMainActivity :
         }
 
         binding.mvvmButton.setOnClickListener {
-//            startActivity(Intent(this, ))
+            startActivity(Intent(this, MvvmMainActivity::class.java))
         }
     }
 }

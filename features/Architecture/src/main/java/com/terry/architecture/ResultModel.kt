@@ -1,9 +1,9 @@
-package com.terry.architecture.mvp.model
+package com.terry.architecture
 
 /*
  * Created by Taehyung Kim on 2021-08-14
  */
-class MvpModel {
+class ResultModel {
     private val resultList = arrayListOf<String>()
 
     fun saveResultData(

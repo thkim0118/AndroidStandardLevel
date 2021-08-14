@@ -18,6 +18,10 @@
             android:name=".ArchitectureMainActivity"
             android:exported="true" />
         <activity
+            android:name=".mvvm.MvvmMainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AndroidStandardLevel.Architecture.NoActionBar" />
+        <activity
             android:name=".mvp.MvpMainActivity"
             android:exported="true"
             android:theme="@style/Theme.AndroidStandardLevel.Architecture.NoActionBar" />

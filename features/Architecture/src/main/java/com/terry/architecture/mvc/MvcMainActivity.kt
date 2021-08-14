@@ -10,11 +10,11 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.terry.architecture.R
-import com.terry.architecture.mvc.model.MvcModel
+import com.terry.architecture.ResultModel
 
 class MvcMainActivity : AppCompatActivity() {
 
-    private val resultModel = MvcModel()
+    private val resultModel = ResultModel()
 
     private val makeResultButton by lazy {
         findViewById<Button>(R.id.makeResultButton)
@@ -48,15 +48,13 @@ class MvcMainActivity : AppCompatActivity() {
             resultModel.saveResultData(
                 first = firstEditText.text.toString(),
                 second = secondEditText.text.toString()
-            )
-
-            // Update UI
-            resultModel.saveSuccess = { isSuccess ->
-                if (isSuccess) {
-                    showResultData()
-                }
-
+            ) { isSuccess, resultData ->
+                // Update UI
                 hideProgress()
+
+                if (isSuccess) {
+                    showResultData(resultData)
+                }
             }
         }
     }
@@ -73,10 +71,13 @@ class MvcMainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showResultData() {
+    private fun showResultData(resultData: ArrayList<String>) {
         Handler(Looper.getMainLooper()).post {
             // Model Changed
-            resultTextView.text = resultModel.getTotalResult()
+            resultTextView.text = getAllResult(resultData)
         }
     }
+
+    private fun getAllResult(resultData: ArrayList<String>): String =
+        resultData.reduce { total, s -> total + s }
 }
