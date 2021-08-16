@@ -45,17 +45,19 @@ class MvcMainActivity : AppCompatActivity() {
             showProgress()
 
             // Controller : action 에 대한 처리 진행(Update UI)
-            resultModel.saveResultData(
-                first = firstEditText.text.toString(),
-                second = secondEditText.text.toString()
-            ) { isSuccess, resultData ->
-                // Update UI
-                hideProgress()
+            Thread {
+                resultModel.saveResultData(
+                    first = firstEditText.text.toString(),
+                    second = secondEditText.text.toString()
+                ) { isSuccess, resultData ->
+                    // Update UI
+                    hideProgress()
 
-                if (isSuccess) {
-                    showResultData(resultData)
+                    if (isSuccess) {
+                        showResultData(resultData)
+                    }
                 }
-            }
+            }.start()
         }
     }
 
