@@ -10,11 +10,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.terry.architecture.R
-import com.terry.architecture.ResultModel
 
 class MvcMainActivity : AppCompatActivity() {
 
-    private val resultModel = ResultModel()
+    private val mvcController = MvcController()
 
     private val makeResultButton by lazy {
         findViewById<Button>(R.id.makeResultButton)
@@ -45,19 +44,17 @@ class MvcMainActivity : AppCompatActivity() {
             showProgress()
 
             // Controller : action 에 대한 처리 진행(Update UI)
-            Thread {
-                resultModel.saveResultData(
-                    first = firstEditText.text.toString(),
-                    second = secondEditText.text.toString()
-                ) { isSuccess, resultData ->
-                    // Update UI
-                    hideProgress()
+            mvcController.saveResult(
+                first = firstEditText.text.toString(),
+                second = secondEditText.text.toString()
+            ) { isSuccess, resultData ->
+                // Update UI
+                hideProgress()
 
-                    if (isSuccess) {
-                        showResultData(resultData)
-                    }
+                if (isSuccess) {
+                    showResultData(resultData)
                 }
-            }.start()
+            }
         }
     }
 
