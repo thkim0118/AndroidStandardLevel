@@ -47,4 +47,9 @@
         <item name="android:statusBarColor">@color/audio_player_background</item>
     </style>
 
+    <style name="Theme.AndroidStandardLevel.Architecture.NoActionBar" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
 </resources>
