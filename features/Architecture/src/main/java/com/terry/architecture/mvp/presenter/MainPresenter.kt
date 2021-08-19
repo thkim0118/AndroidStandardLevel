@@ -17,14 +17,18 @@ class MainPresenter(
         Thread {
             view.showProgress()
 
-            resultModel.saveResultData(first, second) { isSuccess, resultData ->
-                view.hideProgress()
-
-                if (isSuccess) {
-                    view.showResultData(getAllResult(resultData))
-                }
-            }
+            saveModelData(first, second)
         }.start()
+    }
+
+    private fun saveModelData(first: String, second: String) {
+        resultModel.saveResultData(first, second) { isSuccess, resultData ->
+            view.hideProgress()
+
+            if (isSuccess) {
+                view.showResultData(getAllResult(resultData))
+            }
+        }
     }
 
     private fun getAllResult(resultList: ArrayList<String>) =

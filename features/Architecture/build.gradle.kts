@@ -41,4 +41,12 @@ dependencies {
     implementation(Deps.CONSTRAINT_LAYOUT)
 
     implementation(Deps.FRAGMENT)
+
+    testImplementation(TestDeps.JUNIT)
+    testImplementation(TestDeps.HAMCREST)
+    testImplementation(TestDeps.ANDROID_TEST_CORE)
+    testImplementation(TestDeps.ANDROID_ARCH_CORE)
+    testImplementation(TestDeps.MOCKITO)
+    androidTestImplementation(TestDeps.ANDROID_JUNIT)
+    androidTestImplementation(TestDeps.ANDROID_ESPRESSO)
 }

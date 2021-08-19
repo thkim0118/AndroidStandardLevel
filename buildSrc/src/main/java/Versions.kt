@@ -76,6 +76,13 @@ object Version {
 }
 
 object TestVersion {
+    const val JUNIT_VERSION = "4.13.2"
+    const val HAMCREST_VERSION = "1.3"
+    const val ANDROID_TEST_CORE = "1.4.0"
+    const val ANDROID_ARCH_TEST = "2.1.0"
+    const val MOCKITO_VERSION = "2.19.0"
+    const val ANDROID_JUNIT = "1.1.3"
+    const val ESPRESSO_VERSION = "3.4.0"
     // AndroidX
     const val androidXTestExtKotlinRunnerVersion = "1.1.1"
 
