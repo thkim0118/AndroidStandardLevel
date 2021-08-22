@@ -14,4 +14,5 @@
     <string name="title_audioplayer">AudioPlayer</string>
     <string name="title_location">Location</string>
     <string name="title_architecture">Architecture</string>
+    <string name="title_weeklystudy">WeeklyStudy</string>
 </resources>

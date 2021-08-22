@@ -95,10 +95,12 @@ object Deps {
         "com.google.android.exoplayer:exoplayer:${Version.EXO_PLAYER_VERSION}"
 }
 
-object TestLibs {
-    // AndroidX
-    const val androidXTestExtKotlinRunnerVersion = "1.1.1"
-
-    // Espresso
-    const val espressoVersion = "3.2.0"
+object TestDeps {
+    const val JUNIT = "junit:junit:${TestVersion.JUNIT_VERSION}"
+    const val HAMCREST = "org.hamcrest:hamcrest-all:${TestVersion.HAMCREST_VERSION}"
+    const val ANDROID_TEST_CORE = "androidx.test:core-ktx:${TestVersion.ANDROID_TEST_CORE}"
+    const val ANDROID_ARCH_CORE = "androidx.arch.core:core-testing:${TestVersion.ANDROID_ARCH_TEST}"
+    const val MOCKITO = "org.mockito:mockito-core:${TestVersion.MOCKITO_VERSION}"
+    const val ANDROID_JUNIT = "androidx.test.ext:junit:${TestVersion.ANDROID_JUNIT}"
+    const val ANDROID_ESPRESSO = "androidx.test.espresso:espresso-core:${TestVersion.ESPRESSO_VERSION}"
 }
