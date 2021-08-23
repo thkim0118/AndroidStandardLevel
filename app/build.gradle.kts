@@ -70,7 +70,8 @@ android {
         Modules.DynamicFeature.MUSIC_PLAYER,
         Modules.DynamicFeature.LOCATION,
         Modules.DynamicFeature.ARCHITECTURE,
-        Modules.DynamicFeature.WEEKLY_STUDY
+        Modules.DynamicFeature.WEEKLY_STUDY,
+        Modules.DynamicFeature.MOTION_INTRO
     )
 }
 

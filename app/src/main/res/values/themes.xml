@@ -52,4 +52,9 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <style name="Theme.AndroidStandardLevel.MotionIntro.AppBarOverlay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
 </resources>

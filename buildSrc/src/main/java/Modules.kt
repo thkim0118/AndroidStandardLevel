@@ -32,5 +32,6 @@ object Modules {
         const val LOCATION = ":features:Location"
         const val ARCHITECTURE = ":features:Architecture"
         const val WEEKLY_STUDY = ":features:WeeklyStudy"
+        const val MOTION_INTRO = ":features:MotionIntro"
     }
 }

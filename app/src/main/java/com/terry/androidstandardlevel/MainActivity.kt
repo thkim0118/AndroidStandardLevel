@@ -25,6 +25,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 //        startActivity("com.terry.videoplayer.VideoMainActivity")
 //        startActivity("com.terry.musicplayer.MusicMainActivity")
 //        startActivity("com.terry.location.LocationMainActivity")
-        startActivity("com.terry.architecture.ArchitectureMainActivity")
+//        startActivity("com.terry.architecture.ArchitectureMainActivity")
+        startActivity("com.terry.motionintro.MotionIntroMainActivity")
     }
 }
