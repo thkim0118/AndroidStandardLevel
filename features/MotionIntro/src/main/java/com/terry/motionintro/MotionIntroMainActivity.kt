@@ -9,10 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.constraintlayout.motion.widget.MotionLayout.TransitionListener
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.appbar.AppBarLayout
-import com.terry.common.LogT
 import com.terry.common.base.BaseActivity
 import com.terry.motionintro.databinding.ActivityMotionIntroMainBinding
 import kotlin.math.abs
@@ -20,7 +20,9 @@ import kotlin.math.abs
 class MotionIntroMainActivity :
     BaseActivity<ActivityMotionIntroMainBinding>(ActivityMotionIntroMainBinding::inflate) {
 
-    private var isGatheringMotionAnimation: Boolean = false
+    private var isGatheringMotionAnimating: Boolean = false
+
+    private var isCurationMotionAnimating: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,43 +90,45 @@ class MotionIntroMainActivity :
 
         binding.scrollView.viewTreeObserver.addOnScrollChangedListener {
             val scrolledValue = binding.scrollView.scrollY
-            LogT.d("scrolledValue : $scrolledValue, ${150f.dpToPx(this@MotionIntroMainActivity).toInt()}")
 
             if (scrolledValue > 150f.dpToPx(this@MotionIntroMainActivity).toInt()) {
-                if (isGatheringMotionAnimation.not()) {
+                if (isGatheringMotionAnimating.not()) {
                     binding.gatheringDigitalThingsBackgroundMotionLayout.transitionToEnd()
-//                    binding.gatheringDigitalThingsMotionLayout.transitionToEnd()
+                    binding.gatheringDigitalThingsMotionLayout.transitionToEnd()
                     binding.buttonShownMotionLayout.transitionToEnd()
                 }
             } else {
-                if (isGatheringMotionAnimation.not()) {
+                if (isGatheringMotionAnimating.not()) {
                     binding.gatheringDigitalThingsBackgroundMotionLayout.transitionToStart()
-//                    binding.gatheringDigitalThingsMotionLayout.transitionToStart()
+                    binding.gatheringDigitalThingsMotionLayout.transitionToStart()
                     binding.buttonShownMotionLayout.transitionToStart()
                 }
             }
 
             if (scrolledValue > binding.scrollView.height) {
-                if (isGatheringMotionAnimation.not()) {
-//                    binding.curationAnimationMotionLayout.setTransition(R.id.curation_animation_start1, R.id.curation_animation_end1)
-//                    binding.curationAnimationMotionLayout.transitionToEnd()
-//                    isCurationMotionAnimating = true
+                if (isCurationMotionAnimating.not()) {
+                    binding.curationAnimationMotionLayout.setTransition(
+                        R.id.curation_animation_start1,
+                        R.id.curation_animation_end1
+                    )
+                    binding.curationAnimationMotionLayout.transitionToEnd()
+                    isCurationMotionAnimating = true
                 }
             }
         }
     }
 
     private fun initMotionLayoutListeners() {
-        binding.gatheringDigitalThingsBackgroundMotionLayout.setTransitionListener(object :
-            MotionLayout.TransitionListener {
+        binding.gatheringDigitalThingsMotionLayout.setTransitionListener(object :
+            TransitionListener {
             override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
-                isGatheringMotionAnimation = true
+                isGatheringMotionAnimating = true
             }
 
             override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) = Unit
 
             override fun onTransitionCompleted(p0: MotionLayout?, currentId: Int) {
-                isGatheringMotionAnimation = false
+                isGatheringMotionAnimating = false
             }
 
             override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) =
@@ -132,23 +136,27 @@ class MotionIntroMainActivity :
 
         })
 
-//        binding.curationAnimationMotionLayout.setTransitionListener(object : TransitionListener {
-//            override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) = Unit
-//
-//            override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) = Unit
-//
-//            override fun onTransitionCompleted(p0: MotionLayout?, currentId: Int) {
-//                when (currentId) {
-//                    R.id.curation_animation_end1 -> {
-//                        binding.curationAnimationMotionLayout.setTransition(R.id.curation_animation_start2, R.id.curation_animation_end2)
-//                        binding.curationAnimationMotionLayout.transitionToEnd()
-//                    }
-//                }
-//            }
-//
-//            override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) = Unit
-//
-//        })
+        binding.curationAnimationMotionLayout.setTransitionListener(object : TransitionListener {
+            override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) = Unit
+
+            override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) = Unit
+
+            override fun onTransitionCompleted(p0: MotionLayout?, currentId: Int) {
+                when (currentId) {
+                    R.id.curation_animation_end1 -> {
+                        binding.curationAnimationMotionLayout.setTransition(
+                            R.id.curation_animation_start2,
+                            R.id.curation_animation_end2
+                        )
+                        binding.curationAnimationMotionLayout.transitionToEnd()
+                    }
+                }
+            }
+
+            override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) =
+                Unit
+
+        })
     }
 
 }
