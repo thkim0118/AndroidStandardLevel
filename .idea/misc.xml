@@ -3,16 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Architecture/src/main/res/layout/activity_architecture_main.xml" value="0.1425925925925926" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Architecture/src/main/res/layout/activity_common_main.xml" value="0.25" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Architecture/src/main/res/layout/activity_mvc_main.xml" value="0.2545289855072464" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Architecture/src/main/res/layout/activity_mvp_main.xml" value="0.1425925925925926" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Location/src/main/res/layout/activity_location_main.xml" value="0.18" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Location/src/main/res/layout/activity_map.xml" value="0.18693009118541035" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Location/src/main/res/layout/item_search_result.xml" value="0.45740740740740743" />
-        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MotionIntro/src/main/res/drawable/background_intro_title.xml" value="0.49722222222222223" />
-        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MotionIntro/src/main/res/layout/activity_motion_intro_main.xml" value="0.33" />
-        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MotionIntro/src/main/res/layout/layout_intro_title.xml" value="0.33" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MotionIntro/src/main/res/drawable/shape_circle.xml" value="0.4010416666666667" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MotionIntro/src/main/res/layout/activity_motion_intro_main.xml" value="0.1" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MotionIntro/src/main/res/layout/layout_intro_title.xml" value="0.2692502532928065" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MotionIntro/src/main/res/xml/curation_animation_scene.xml" value="0.291213768115942" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MotionIntro/src/main/res/xml/gathering_digital_things_background_scene.xml" value="0.3848958333333333" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MusicPlayer/src/main/res/layout/activity_audio_main.xml" value="0.49094202898550726" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MusicPlayer/src/main/res/layout/fragment_player.xml" value="0.18795289855072464" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MusicPlayer/src/main/res/layout/item_music.xml" value="0.1" />
-        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/VideoPlayer/src/main/res/layout/fragment_player.xml" value="0.1" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/VideoPlayer/src/main/res/layout/item_video.xml" value="0.18667679837892603" />
       </map>
     </option>
