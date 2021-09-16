@@ -46,6 +46,8 @@ object Version {
 
     const val FRAGMENT_VERSION = "1.3.6"
 
+    const val BROWSER_VERSION = "1.3.0"
+
     // Coroutines
     const val COROUTINES_VERSION = "1.3.5"
 
@@ -83,6 +85,7 @@ object TestVersion {
     const val MOCKITO_VERSION = "2.19.0"
     const val ANDROID_JUNIT = "1.1.3"
     const val ESPRESSO_VERSION = "3.4.0"
+
     // AndroidX
     const val androidXTestExtKotlinRunnerVersion = "1.1.1"
 

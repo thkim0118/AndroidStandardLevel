@@ -47,4 +47,6 @@ dependencies {
     implementation(Deps.ANDROIDX_CORE_KTX)
     implementation(Deps.APPCOMPAT)
     implementation(Deps.CONSTRAINT_LAYOUT)
+
+    implementation(Deps.BROWSER) // Display webpages in the user's default browser
 }

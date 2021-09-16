@@ -33,6 +33,8 @@ object Deps {
 
     const val FRAGMENT = "androidx.fragment:fragment-ktx:${Version.FRAGMENT_VERSION}"
 
+    const val BROWSER = "androidx:browser:browser:${Version.BROWSER_VERSION}"
+
     // Coroutines
     const val COROUTINES_CORE =
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINES_VERSION}"
