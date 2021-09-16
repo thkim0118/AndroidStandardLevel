@@ -33,7 +33,7 @@ object Deps {
 
     const val FRAGMENT = "androidx.fragment:fragment-ktx:${Version.FRAGMENT_VERSION}"
 
-    const val BROWSER = "androidx:browser:browser:${Version.BROWSER_VERSION}"
+    const val BROWSER = "androidx.browser:browser:${Version.BROWSER_VERSION}"
 
     // Coroutines
     const val COROUTINES_CORE =
