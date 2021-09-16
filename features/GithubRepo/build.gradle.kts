@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id(Plugins.ANDROID_DYNAMIC_FEATURE_PLUGIN)
     id(Plugins.KOTLIN_ANDROID_PLUGIN)
@@ -8,6 +10,11 @@ android {
     defaultConfig {
         minSdkVersion(AndroidVersion.MIN_SDK_VERSION)
         targetSdkVersion(AndroidVersion.TARGET_SDK_VERSION)
+
+        val githubClientId = gradleLocalProperties(rootDir).getProperty("github.client.id")
+        val githubClientKey = gradleLocalProperties(rootDir).getProperty("github.client.key")
+        buildConfigField("String", "githubClientId", githubClientId)
+        buildConfigField("String", "githubClientKey", githubClientKey)
     }
 
     buildTypes {
