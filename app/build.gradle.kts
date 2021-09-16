@@ -71,7 +71,8 @@ android {
         Modules.DynamicFeature.LOCATION,
         Modules.DynamicFeature.ARCHITECTURE,
         Modules.DynamicFeature.WEEKLY_STUDY,
-        Modules.DynamicFeature.MOTION_INTRO
+        Modules.DynamicFeature.MOTION_INTRO,
+        Modules.DynamicFeature.GITHUB_REPO
     )
 }
 

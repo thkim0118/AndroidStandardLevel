@@ -2,7 +2,7 @@
  * Created by Taehyung Kim on 2021-07-04
  */
 object PluginVersion {
-    const val KOTLIN_VERSION = "1.5.10"
+    const val KOTLIN_VERSION = "1.5.21"
     const val GRADLE_VERSION = "4.2.1"
 
     const val NAV_SAFE_ARGS_VERSION = "2.3.0"

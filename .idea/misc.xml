@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Airbnb/src/main/res/drawable/top_radius_white_background.xml" value="0.20277777777777778" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Airbnb/src/main/res/layout/activity_airbnb_main.xml" value="0.16018518518518518" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Airbnb/src/main/res/layout/bottom_sheet.xml" value="0.10435663627152988" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Architecture/src/main/res/layout/activity_architecture_main.xml" value="0.1425925925925926" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Architecture/src/main/res/layout/activity_common_main.xml" value="0.25" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/Architecture/src/main/res/layout/activity_mvc_main.xml" value="0.2545289855072464" />
@@ -18,6 +21,8 @@
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MusicPlayer/src/main/res/layout/activity_audio_main.xml" value="0.49094202898550726" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MusicPlayer/src/main/res/layout/fragment_player.xml" value="0.18795289855072464" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/MusicPlayer/src/main/res/layout/item_music.xml" value="0.1" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/RemoteConfig/src/main/res/layout/activity_saying_main.xml" value="0.12962962962962962" />
+        <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/RemoteConfig/src/main/res/layout/item_quote.xml" value="0.12962962962962962" />
         <entry key="..\:/Git/AndroidStudioProjects/AndroidStandardLevel/features/VideoPlayer/src/main/res/layout/item_video.xml" value="0.18667679837892603" />
       </map>
     </option>

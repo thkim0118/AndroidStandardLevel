@@ -16,4 +16,5 @@
     <string name="title_architecture">Architecture</string>
     <string name="title_weeklystudy">WeeklyStudy</string>
     <string name="title_motionintro">MotionIntro</string>
+    <string name="title_githubrepo">Github Repo</string>
 </resources>

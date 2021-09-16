@@ -10,6 +10,7 @@ buildscript {
         classpath(Plugins.CLASSPATH_KOTLIN)
         classpath(Plugins.CLASSPATH_DAGGER_HILT)
         classpath(Plugins.CLASSPATH_GOOGLE_SERVICE)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21")
     }
 }
 
